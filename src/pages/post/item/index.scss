@@ -1,0 +1,95 @@
+@import "../../../style/system.scss";
+
+.post-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 64vw;
+  margin: 50px 0 40px 0;
+  hr{
+    color:black;
+    width: 50vw;
+    height: 0.1rem;
+    border: none;
+    border-top: 0.5px solid $primary-color;
+    margin: 50px 0 40px 0;
+  }
+  &__title{
+    display: inline-block;
+    font-size: 2.3rem;
+    line-height: 5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.2rem;
+    background-color: transparent;
+    color:inherit;
+    background-image: linear-gradient($primary-color,$primary-color);
+    background-repeat: no-repeat;
+    background-size: 0% 38%;
+    background-position: 0 90%; 
+    transition: all 1s ease-in-out;
+    &:hover{
+      background-size: 100% 38%;
+    }
+  }
+  &__top{
+    font-size: 1rem;
+    margin-left: 2rem;
+    color: white;
+    border: 1px solid $primary-color;
+    background:$primary-color ;
+    padding: 0.3rem;
+    border-radius: 6px;
+  }
+  &__body {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 1.5rem;
+  }
+  &__subline{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    &__time{
+      font-size: 1.3rem;
+      font-weight: 300;
+      color:$primary-color-subline;
+      padding-right: 2rem;
+    }
+    &__label{
+      font-size: 1rem;
+      margin-right: 1rem;
+      padding: 0.3rem;
+      display: flex;
+      align-items: center;
+      height: 2vh;
+      border-radius: 3px;
+      color: $primary-color-darkText;
+    }
+    &__read{
+      cursor: pointer;
+      font-size: 1.3rem;
+      border: 1px solid $primary-color;
+      color:$primary-color;
+      margin-left: 2rem;
+      padding: 0.7rem 1rem 0.7rem 1rem;
+    }
+  }
+}
+
+
+.fadeOut{
+  opacity:0;
+  transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+}
+.fadeIn{
+  opacity:1;
+  transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+  transition-delay: 0.3s;
+}

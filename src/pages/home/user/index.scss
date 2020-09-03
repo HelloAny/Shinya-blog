@@ -1,0 +1,124 @@
+@import "../../../style/system.scss";
+
+.user{
+  position: relative;
+  z-index: 100;
+  height: 100%;
+  flex: auto;
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height:100%;
+    padding-top: 10%;
+    &-profile{
+      height: 9rem;
+      width: 9rem;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 5px 10px #ffffff;
+      border: 2px solid #eeeeee;
+      box-sizing: border-box;
+      cursor: pointer;
+      img{
+        width:100%;
+        height:100%;
+      }
+    }
+    &-name{
+      font-size: 3.6rem;
+      letter-spacing: 1.5px;
+      position: relative;
+      top:-8vh;
+      color:$primary-color-darkText;
+      &::before{
+        content:"\201F ";
+      }
+    }
+    &-article{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-self: center;
+      position: relative;
+      top:-20vh;
+      width: 30rem;
+      &-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 3rem;
+        box-sizing: border-box;
+        color: #ffffff;
+        font-weight: 400;
+        font-size: 1.8rem;
+        background: $primary-color;
+        opacity: 0.7;
+        box-shadow: 0 0 10px #ffffff3a;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        a{
+          color: #ffffff;
+        }
+      }
+    }
+    &-summary{
+      font-size: 1.6rem;
+      position: relative;
+      top:-15vh;
+      letter-spacing: 1.5px;
+      color: #757575;
+      text-shadow: 0 3px 20px #ffffff;
+    }
+    &-link{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 80%;
+      position: relative;
+      top: -20vh;
+      &-item{
+        width:38px;
+        height:38px;
+        display: inline-block;
+        position: relative;
+        border: 1px $primary-color solid;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-radius: 50%;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.37, 0.16, 0.12, 1);
+        svg{
+          // position: absolute;
+          width: 14px;
+          height: 14px;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+        &:hover{
+          background: $primary-color;
+          svg {
+            fill:white;
+          }
+        }
+        a{
+          width: 100%;
+          height: 100%;
+          color:transparent;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        img{
+          height:100%;
+          width:100%;
+        }
+        
+      }
+    }
+  }
+}

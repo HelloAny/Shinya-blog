@@ -1,0 +1,121 @@
+@import "../../../style/system";
+@import '~highlight.js/styles/atom-one-dark.css';
+
+.article-content{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-size: 1.5rem;
+  &__body {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__text{
+      width: 90%;
+    }
+    h1,h2,h3,h4,h5{
+      margin: 2rem 0 1.8rem 0;
+      padding: 10px 0px 5px 0px;
+      &::before{
+        content: "# ";
+        color: $primary-color;
+      }
+    }
+    p{
+      line-height: 3rem;
+      font-weight: 300;
+      white-space:pre-wrap;
+      margin: 2rem 0 1.5rem 0;
+    }
+    blockquote {
+      padding: 0 0px 0 20px;
+      margin: 0 0 20px;
+      font-weight: lighter;
+      font-size: 1.4rem;
+      color: #858585;
+      border-left: 3px solid $primary-color;
+    }
+    code {
+      padding: .4rem;
+      padding-top: .1rem;
+      padding-bottom: .1rem;
+      background: $primary-color-light;
+      border-radius: 5px;
+      font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+      font-size: 1.4rem;
+      vertical-align: middle;
+      word-wrap: break-word;
+    }
+    pre {
+      margin-bottom: 1.3em;
+      padding: 1em 2.5%;
+      background: $primary-color-light;
+      border-radius: 0.4rem;
+      color:$primary-color-text;
+      font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+      font-size: .9em;
+      font-weight: normal;
+      line-height: 1.3em;
+      overflow: scroll;
+      width: 95%;
+      overflow: auto;
+      code {
+        padding: .4rem;
+        padding-top: .1rem;
+        padding-bottom: .1rem;
+        background: transparent;
+        border-radius: 5px;
+        font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+        font-size: 1.4rem;
+        vertical-align: middle;
+        word-wrap: break-word;
+      }
+    }
+    ul{
+      list-style-type: disc;
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin: 0 0 0rem 4rem;
+      list-style: none;
+      li{
+        padding: 0 0 2rem 0;
+        line-height: 1.6em;
+        &::before{
+          content: "\0FCA  ";
+          color: $primary-color;
+        }
+      }
+    }
+    del{
+      color: $primary-color-subline
+    }
+    hr{
+      color:black;
+      width:100%;
+      height: 0.1rem;
+      border: none;
+      border-top: 0.5px solid $primary-color;
+      margin: auto;
+    }
+    a{
+      color: $primary-color;
+      text-decoration: none;
+      transition: all 0.5s ease-in-out;
+      background-image: linear-gradient($primary-color,$primary-color);
+      background-repeat: no-repeat;
+      background-size: 0% 3%;
+      background-position: 0 100%; 
+      &:hover{
+        background-size: 100% 3%;
+      }
+    }
+  }
+  &__tabbar{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,34 @@
+.background{
+    position: absolute;
+    top: 0px;
+    display: flex;
+    height: calc(100vh - (80px + 50 * ((100vw - 320px)/ 1360)));
+    width: 80%;
+    overflow: hidden;  /*这个是必须加的，否则会有阴影层*/
+    background: rgba(255, 255, 255, 0);
+    &__container{
+        width:100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-user{
+            z-index: 100;
+        }
+        &-image{
+            max-width: 70%;
+            max-height: 80%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            position: absolute;
+            overflow: hidden;
+            opacity: 0.7;
+            img{
+                width:100%;
+                height:100%;
+            }
+        }
+    }
+}

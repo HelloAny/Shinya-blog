@@ -1,0 +1,28 @@
+
+.acTabbar{
+  position: sticky;
+  top: 8rem;
+  margin-top:8rem;
+  overflow: hidden;
+  width: 100%;
+  .acTabbar__main{
+    width: 50%;
+    font-size: 1.4rem;
+    font-weight:300;
+    line-height: 2;
+    margin:auto;
+    &-text {
+      width: 80%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: pointer;
+      &-hl{
+        color: orange;
+      }
+    }
+    strong {
+      font-weight:300;
+    }
+  }
+}

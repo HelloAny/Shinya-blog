@@ -1,0 +1,70 @@
+@import "../../style/system.scss";
+
+.headers{
+    width:100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    &__container{
+        height: $topbar-height;
+        background: white;
+        border: none;
+        box-sizing: border-box;
+        overflow: hidden;
+        font-size: 2rem;
+        box-shadow: 0 5px 10px rgba(122, 122, 122, 0.274);
+        &-bar{
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            &-ln{
+                margin-left: 3rem;
+                &-img{
+                    margin-left: 2rem;               
+                  }
+                &-logo{
+                    height: 5rem;
+                    width: 5rem;
+                }
+                &-name{
+                  width:11rem;
+                  height:5rem;
+                }
+            }
+            &-nav{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-right: 6rem;
+                &-list{
+                    display: flex;
+                    flex-direction: row;
+                    font-weight: 300;
+                    &-item{
+                    }
+                }
+                &-img{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    height:4rem;
+                    width:4rem;
+                    background: #ffffff00;
+                    cursor: pointer;
+                    &:hover{
+                        box-shadow: 0 0 20px #8f8f8f;
+                    }
+                    &-search{
+                      height:2rem;
+                      width:2rem;
+                    }
+                }
+            }
+        }
+        
+    }
+}

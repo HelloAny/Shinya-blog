@@ -1,0 +1,39 @@
+
+$primary-color:#65beb4;
+$primary-color-dark:#46a095;
+$primary-color-light: #65beb43b;
+$primary-color-text: #323232;
+$primary-color-darkText: #ffffff;
+$primary-color-subline:#666666;
+$topbar-height: calc(80px + 10 * ((100vw - 320px)/ 1760));
+
+body,dl,dd,dt,p,h1,h2,h3,h4,h5,h6{margin:0;}
+ol,ul{margin:0;padding:0;list-style:none;}  
+*{margin:0;padding:0;}  
+a{
+    box-shadow: none;
+    color: black;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+  }
+
+:root{
+    font-size: 0.72rem;
+    font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+// @media screen and (max-width: 900px){
+//     :root{
+//         font-size: 5px;
+//     }
+// }
+
+body{
+    font-family: Helvetica, sans-serif;
+}
+div,h1,h2,h3{
+    font-family: Helvetica, sans-serif;
+}
