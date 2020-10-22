@@ -3,76 +3,231 @@
 .root{
   /*定义滚动条高宽及背景
  高宽分别对应横竖滚动条的尺寸*/
- ::-webkit-scrollbar
- {
-     position: absolute;
-     top:80px;
-     width:10px;
-     height:16px;
-     background-color:transparent;
- }
- /*定义滚动条轨道
-  内阴影+圆角*/
- ::-webkit-scrollbar-track
- {
-     border-radius:10px;
-     background-color:transparent;
- }
- /*定义滑块
-  内阴影+圆角*/
- ::-webkit-scrollbar-thumb
- {
-     -webkit-box-shadow:inset 0 0 6px $primary-color;
-     background-color: $primary-color;
-     margin-top: 80px;
- }
+ overflow-y: scroll;
 }
 
 .main_container{
-  position: relative;
+  position: absolute;
   top: $topbar-height;
-  overflow: hidden;
-  overflow-y:hidden;
+  overflow-x: hidden;
   height: calc(100vh - (80px + 10 * ((100vw - 320px)/ 1760)));
   width:100%;
 }
 
-.canvas{
-  pointer-events:none;
-  position: absolute;
+
+.initLoading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  pointer-events: none;
+  overflow: hidden;
+  background: transparent;
 }
 
-.page {
-  position: absolute;
+.loading {
+  opacity: 1;
+  z-index: 10;
+  position:fixed;
+}
+
+.loading::before {
+  content: "";
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
   height: 100%;
-  overflow: scroll;
-  overflow-y:scroll;
+  background-color: #48e9c0;
+  animation: framerIn 0.7s ease-in-out;
+}
+
+@keyframes framerIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.loading::after {
+  content: "";
+  position:fixed;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background-color: #48e9c0;
+  z-index: 0;
+  animation: framerOut 0.7s ease-in-out;
+}
+
+@keyframes framerOut {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.loading-done {
+  position:fixed;
+}
+
+.loading-done::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #48e9c0;
+  transform: translateY(100%);
+  animation: framerIn2 0.7s ease-in-out;
+}
+
+@keyframes framerIn2 {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.loading-done::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background-color: #48e9c0;
+  transform: translateY(-100%);
+  animation: framerOut2 0.7s ease-in-out;
+}
+
+@keyframes framerOut2 {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.c-transition_spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 65px;
+  height: 65px;
+  margin-left: -30px;
+  margin-top: -30px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  z-index: 10;
+}
+.c-transition_spinner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: #5e62d1;
+  animation: spinnerBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes spinnerBounce {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+.c-transition_spinner svg {
+  width: 3.25rem;
+  transform-origin: center;
+  animation: spinnerRotate 2s linear infinite;
+}
+
+@keyframes spinnerRotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.c-transition_spinner circle {
+  fill: none;
+  stroke-width: 2;
+  stroke: #5fecc8;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: spinnerDash 1.5s ease-in-out infinite;
+}
+
+@keyframes spinnerDash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dashoffset: -125px;
+  }
+}
+
+.icon {
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.icon-done {
+  opacity: 0;
+  transition: all 0.5s;
 }
 
 .page-enter {
   opacity: 0;
-  transform: scale(1.1);
 }
-
-// .page-enter-active {
-//   opacity: 1;
-//   transform: scale(1);
-  
-// }
 
 .page-enter-done {
   opacity: 1;
-  transform: scale(1);
-  // transition: opacity 300ms, transform 300ms;
 }
 
 .page-exit {
   opacity: 1;
-  transform: scale(1);
 }
-
 .page-exit-done {
   opacity: 0;
-  transform: scale(0);
-  // transition: opacity 300ms, transform 300ms;
 }
+
+.HC-prev-exit {
+  display: none;
+}
+

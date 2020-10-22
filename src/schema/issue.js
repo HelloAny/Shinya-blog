@@ -54,7 +54,32 @@ export const SCHEMA_ISSUES = `query getIssueIndex($repo: String!, $owner: String
 ${ISSUES_INDEX}
 `
 
-export const SCHEMA_ISSUESLIST = `query getIssuesList($repo: String!, $owner: String!, $first: Int!) {
+export const SCHEMA_ISSUESLIST = `query getIssuesList($repo: String!, $owner: String!, $last: Int!) {
+  repository(owner: $owner, name: $repo) {
+    pinnedIssues(first: 3) {
+      edges {
+        node {
+          issue {
+            ...issueInfo
+          }
+        }
+      }
+    }
+    issues(last: $last) {
+      edges {
+        node {
+          ...issueInfo
+        }
+        cursor
+      }
+    }
+  }
+}
+${ISSUE_LIST}
+
+`
+
+export const SCHEMA_MOREISSUESLIST = `query getMoreIssuesList($repo: String!, $owner: String!, $last: Int!, $before: String!) {
   repository(owner: $owner, name: $repo) {
     pinnedIssues(first: 3) {
       edges {
@@ -65,7 +90,7 @@ export const SCHEMA_ISSUESLIST = `query getIssuesList($repo: String!, $owner: St
         }
       }
     }
-    issues(first: $first) {
+    issues(last: $last, before:$before) {
       edges {
         node {
           ...issueInfo

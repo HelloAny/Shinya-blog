@@ -1,9 +1,10 @@
-import { SCHEMA_ISSUESLIST, SCHEMA_ISSUES } from "../schema/issue"
-import { ISSUES_LIST, ISSUES_INDEX } from "../constants/issues"
+import { SCHEMA_ISSUESLIST, SCHEMA_ISSUES, SCHEMA_MOREISSUESLIST } from "../schema/issue"
+import { ISSUES_LIST, ISSUES_INDEX, ISSUES_MORE } from "../constants/issues"
+import fetchQL from "../utils/octokitQL"
 
 
-export const ISSUESLIST = (payload) =>
-  ({
+export const ISSUESLIST = async (payload) =>
+  await fetchQL({
     action: {
       type: ISSUES_LIST
     },
@@ -16,8 +17,8 @@ export const ISSUESLIST = (payload) =>
     schema: SCHEMA_ISSUESLIST
   })
 
-export const ISSUESINDEX = (payload) =>
-  ({
+export const ISSUESINDEX = async (payload) =>
+  await fetchQL({
     action: {
       type: ISSUES_INDEX
     },
@@ -25,15 +26,16 @@ export const ISSUESINDEX = (payload) =>
     schema: SCHEMA_ISSUES
   })
 
-// export const ISSUESPINNED = () =>
-//   ({
-//     action: {
-//       type: ISSUES_PINNED
-//     },
-//     payload: {
-//       headers: {
-//         Accept: 'application/vnd.github.elektra-preview+json'
-//       }
-//     },
-//     schema: SCHEMA_ISSUESPINNED
-//   })
+export const ISSUESMORE = async (payload) =>
+  await fetchQL({
+    action: {
+      type: ISSUES_MORE
+    },
+    payload: {
+      headers: {
+        Accept: 'application/vnd.github.elektra-preview+json'
+      },
+      ...payload
+    },
+    schema: SCHEMA_MOREISSUESLIST
+  })

@@ -22,8 +22,10 @@
             justify-content: space-between;
             &-ln{
                 margin-left: 3rem;
+                
                 &-img{
-                    margin-left: 2rem;               
+                    margin-left: 2rem;  
+                                 
                   }
                 &-logo{
                     height: 5rem;
@@ -33,17 +35,53 @@
                   width:11rem;
                   height:5rem;
                 }
+                @media screen and (max-width:600px ){
+                    margin-left: 1rem;
+                    &-img{
+                        margin-left: 1rem;         
+                      }
+                    &-logo{
+                        height: 2.5rem;
+                        width: 2.5rem;
+                    }
+                    &-name{
+                      width:6rem;
+                      height:3rem;
+                    }
+                }
             }
             &-nav{
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 margin-right: 6rem;
+              
                 &-list{
                     display: flex;
                     flex-direction: row;
                     font-weight: 300;
+                    @media screen and (max-width:600px ){
+                        margin-left: 1.5rem;
+                    }
                     &-item{
+                        width: 100px;
+                        height: 50px;
+                        border: none;
+                        border-radius: 0;
+                        margin-right: 60px;
+                        font-weight: 300;
+                        font-size: 1.8rem;
+                    }
+                    @media screen and (max-width:600px ){
+                        &-item{
+                            width: 70px;
+                            height: 40px;
+                            border: none;
+                            border-radius: 0;
+                            margin-right: 30px;
+                            font-weight: 300;
+                            font-size: 1.3rem;
+                        }
                     }
                 }
                 &-img{
@@ -68,3 +106,4 @@
         
     }
 }
+

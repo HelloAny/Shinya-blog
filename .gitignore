@@ -11,6 +11,9 @@
 # production
 /build
 
+/shinya*
+/src/constants/auth.js
+
 # misc
 .DS_Store
 .env.local

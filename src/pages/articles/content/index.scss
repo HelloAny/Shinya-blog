@@ -1,5 +1,6 @@
 @import "../../../style/system";
-@import '~highlight.js/styles/atom-one-dark.css';
+@import '~highlight.js/styles/github.css';
+
 
 .article-content{
   display: flex;
@@ -12,6 +13,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @media screen and (max-width:600px ){
+      width: 100%;
+    }
     &__text{
       width: 90%;
     }
@@ -117,5 +121,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    @media screen and (max-width:600px ){
+      display: none;
+    }
   }
 }

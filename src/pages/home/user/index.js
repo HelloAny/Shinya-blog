@@ -1,8 +1,5 @@
 import React from "react"
-
-
-import { Card, HCLink } from "../../../components"
-import { Link } from "react-router-dom"
+import { Card } from "../../../components"
 import Profile from "../../../assets/profile.jpg"
 
 import "./index.scss"
@@ -12,31 +9,22 @@ const User = ({ changeWrapper }) => {
   return (
     <main className="user">
       <section className="user__container">
+        <section className="user__container-name">{"AMIKARA."}</section>
         <Card>
-          <figure className="user__container-profile">
-            <img src={Profile} alt="" />
-          </figure>
-        </Card>
-        <section className="user__container-name">{"AmiKara"}</section>
-        <section className="user__container-summary">{"热爱之所爱"}</section>
-        <section className="user__container-article">
-          <Card>
-            <HCLink to="/blog">
-              <section className="user__container-article-item">
-                博客
-              </section>
-            </HCLink>
+          <section className="user__container-profile">
 
-          </Card>
-          <Card>
-            <section className="user__container-article-item">
-              简历
+            <section className="user__container-profile-circle">
+              <svg viewBox="30 30 60 60">
+                <circle cx="60" cy="60" r="25" ></circle>
+              </svg>
+            </section>
+            <img src={Profile} alt="" />
           </section>
-          </Card>
-        </section>
+        </Card>
+        <section className="user__container-summary">{"「嘻」"}</section>
         <section className="user__container-link">
           <span className="user__container-link-item">
-            <a href="https://baidu.com" rel="noopener noreferrer" target="_blank">
+            <a href="https://twitter.com/AmiKara2" rel="noopener noreferrer" target="_blank">
               <svg aria-labelledby="pageFooter-iconTwitter-title" role="img" width="14" height="14" viewBox="0 0 14 14">
                 <title id="pageFooter-iconTwitter-title">twitter</title>
                 <use xlinkHref="#icon_twitter">
@@ -48,7 +36,7 @@ const User = ({ changeWrapper }) => {
             </a>
           </span>
           <span className="user__container-link-item">
-            <a href="https://baidu.com" rel="noopener noreferrer" target="_blank">
+            <a href="https://www.instagram.com/amikara_/" rel="noopener noreferrer" target="_blank">
               <svg aria-labelledby="pageFooter-iconInstagram-title" role="img" width="14" height="14" viewBox="0 0 14 14">
                 <title id="pageFooter-iconInstagram-title">instagram</title>
                 <use xlinkHref="#icon_instagram">
@@ -60,7 +48,7 @@ const User = ({ changeWrapper }) => {
             </a>
           </span>
           <span className="user__container-link-item">
-            <a href="https://baidu.com" rel="noopener noreferrer" target="_blank">
+            <a href="https://www.zhihu.com/people/ai-yi-zhu-53" rel="noopener noreferrer" target="_blank">
               <svg aria-labelledby="pageFooter-iconZhiHu-title" role="img" width="14" height="14" viewBox="0 0 14 14">
                 <title id="pageFooter-iconZhiHu-title">zhihu</title>
                 <use xlinkHref="#icon_zhihu">
@@ -72,7 +60,7 @@ const User = ({ changeWrapper }) => {
             </a>
           </span>
           <span className="user__container-link-item">
-            <a href="https://baidu.com" rel="noopener noreferrer" target="_blank">
+            <a href="https://github.com/HelloAny" rel="noopener noreferrer" target="_blank">
               <svg aria-labelledby="pageFooter-iconGithub-title" role="img" width="14" height="14" viewBox="0 0 14 14">
                 <title id="pageFooter-iconGithub-title">github</title>
                 <use xlinkHref="#icon_github">

@@ -1,35 +1,49 @@
-import React, { useEffect } from "react"
-// import { gsap } from "gsap"
-import Background from "./background/index"
+import React from "react"
+// import Background from "./background/index"
+import { domotion } from "react-loading-transition"
 import User from "./user/index"
+
+// import { ICP } from "../../components"
 import "./home.scss"
 
 
-const Home = ({ show }) => {
-  useEffect(() => {
-    // const wrapperGsap = gsap.timeline()
-    // const blogGsap = gsap.timeline()
-    // wrapperGsap.to(".body__blog", { scale: 0.9, duration: 0.5, zIndex: -1 })
-    //   .to(".body__blog", { display: "none", delay: 1 })
-    // blogGsap.from(".body__wrapper", { y: "20vh", zIndex: 1, position: "absolute", opacity: 0, delay: 0.3, duration: 1 })
-    //   .to(".body__wrapper", { y: 0, opacity: 1, scale: 1, ease: "power1", display: "block", })
-    //   .to(".body__wrapper", { position: "relative" })
-  }, [])
+class Home extends React.Component {
+  componentDidMount() {
+    domotion(false)
+  }
 
+  render() {
+    return (
+      <main className="body">
+        <section className="body__wrapper">
+          <section className="body__wrapper--n">
+            <section className=""></section>
+            <section className="body__wrapper--1 body__wrapper--m"></section>
+            <section className="body__wrapper--2 body__wrapper--m"></section>
+            <section className="body__wrapper--3 body__wrapper--m"></section>
+            <section className="body__wrapper--4 body__wrapper--m"></section>
+            <section className="body__wrapper--5 body__wrapper--m"></section>
+            <section className="body__wrapper--s body__wrapper--6"></section>
+            <section className="body__wrapper--s body__wrapper--7"></section>
+            <section className="body__wrapper--s body__wrapper--8"></section>
+            <section className="body__wrapper--s body__wrapper--9"></section>
+            <section className="body__wrapper--s body__wrapper--10"></section>
+            <section className="body__wrapper--s body__wrapper--11"></section>
+            <section className="body__wrapper--s body__wrapper--12"></section>
+            <section className="body__wrapper--s body__wrapper--13"></section>
+            <section className="body__wrapper-user">
+              <User />
+            </section>
+          </section>
+          <section className="body__wrapper-ICP" >
+            <span className="body__wrapper-ICP-design">© 2019-2020 Shinya Blog. All rights reserved. Made with <span className="body__wrapper-ICP-design-heart">❤</span>  by The <span className="ICP-design-user">AmiKara</span> Design </span>
+            <span className="body__wrapper-ICP-icp"> | 浙ICP备19035018号-2 |</span>
+          </section>
+        </section >
+      </main >
+    )
+  }
 
-  return (
-    <main className="body">
-      <section className="body__wrapper">
-        <section className="body__wrapper-user">
-          <User />
-        </section>
-        <section className="body__wrapper-background">
-          <Background />
-        </section>
-      </section>
-      <canvas className="canvas" id="canvas"></canvas>
-    </main>
-  )
 
 }
 
