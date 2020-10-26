@@ -2,7 +2,7 @@
 import React from "react";
 import {
   BrowserRouter as Router,
-  Route,
+  Route
 } from "react-router-dom";
 import { LoadTransition, LoadMotion, domotion } from "react-loading-transition"
 import KeepAlive from 'react-activation'
@@ -19,38 +19,53 @@ const routes = [
   { path: '/', name: 'Home', Component: Home },
   { path: '/blog', name: 'Blog', Component: Post },
   { path: `/article/:number`, name: 'Article', Component: Articles },
-  { path: '/error', name: 'Error', Component: Error }
+  { path: '*', name: "Error", Component: Error }
 ]
 
 const Routes = (props) => {
   window.addEventListener("popstate", () => {
     domotion(true)
   })
+  const componentSwitch = (path, Component, props) => {
+    switch (path) {
+      case `/blog`:
+        return (<KeepAlive>
+          <main className="main_container" id="page">
+            <Component {...props} />
+          </main>
+        </KeepAlive>);
+      default:
+        return <main className="main_container" id="page">
+          <Component {...props} />
+        </main>
+    }
+  }
+  const routesList = () => {
+    let visible = []
+    return routes.map(({ path, Component }, index) => (
+      <Route key={path} exact path={path}>
+        {
+          (props) => {
+            visible.push(props.match)
+            if (index === routes.length - 1) {
+              props.match = visible.filter(el => el).length >= 2 ? null : props.match
+            }
+            return (
+              <LoadMotion in={props.match != null} timeout={1500}>
+                {
+                  componentSwitch(path, Component, props)
+                }
+              </LoadMotion>
+            )
+          }
+        }
+      </Route >
+    ))
+  }
   return (
     <LoadTransition loadNode={Load} delay={600}>
-      {routes.map(({ path, Component }) => (
-        <Route key={path} exact path={path}>
-          {
-            (props) => {
-              return (
-                <LoadMotion in={props.match != null} timeout={1500}>
-                  {
-                    path === `/blog` ?
-                      <KeepAlive>
-                        <main className="main_container" id="page">
-                          <Component {...props} />
-                        </main>
-                      </KeepAlive> :
-                      <main className="main_container" id="page">
-                        <Component {...props} />
-                      </main>
-                  }
-                </LoadMotion>
-              )
-            }
-          }
-        </Route >
-      ))
+      {
+        routesList()
       }
     </LoadTransition >
   )

@@ -9,7 +9,7 @@ const User = ({ changeWrapper }) => {
   return (
     <main className="user">
       <section className="user__container">
-        <section className="user__container-name">{"AMIKARA."}</section>
+        {/* <section className="user__container-name">{"AMIKARA."}</section>
         <Card>
           <section className="user__container-profile">
 
@@ -20,9 +20,9 @@ const User = ({ changeWrapper }) => {
             </section>
             <img src={Profile} alt="" />
           </section>
-        </Card>
-        <section className="user__container-summary">{"「嘻」"}</section>
-        <section className="user__container-link">
+        </Card> */}
+        <section className="user__container-summary">{}</section>
+        {/* <section className="user__container-link">
           <span className="user__container-link-item">
             <a href="https://twitter.com/AmiKara2" rel="noopener noreferrer" target="_blank">
               <svg aria-labelledby="pageFooter-iconTwitter-title" role="img" width="14" height="14" viewBox="0 0 14 14">
@@ -83,7 +83,7 @@ const User = ({ changeWrapper }) => {
               </svg>
             </a>
           </span>
-        </section>
+        </section> */}
       </section>
     </main>
   )

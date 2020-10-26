@@ -1,16 +1,38 @@
 import React from "react"
-// import Background from "./background/index"
+import { gsap } from "gsap"
 import { domotion } from "react-loading-transition"
 import User from "./user/index"
 
-// import { ICP } from "../../components"
 import "./home.scss"
 
 
 class Home extends React.Component {
   componentDidMount() {
     domotion(false)
+    gsap.from(".body__wrapper--m", 1, {
+      y: 100,
+      ease: "power4.out",
+      delay: 0.5,
+      stagger: {
+        amount: 1,
+        grid: "auto",
+        from: "center"
+      }
+    })
+    gsap.to(".body__wrapper--s", 1, {
+      scale: 0.1,
+      yoyo: true,
+      repeat: -1,
+      ease: "power4.out",
+      delay: 0.5,
+      stagger: {
+        amount: 1.5,
+        grid: "auto",
+        from: "center"
+      }
+    })
   }
+
 
   render() {
     return (

@@ -1,4 +1,4 @@
-export const REPO_AUTHOR = "7e45b0c78a5c2a03fdf5542d427eb81c299f160a"
+export const REPO_AUTHOR = "25b8de6496b34766fc90438c3a1a2efbd713f0d2"
 
 export const OWNER = "HelloAny"
 export const REPOS = "article"
