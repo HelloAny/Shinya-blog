@@ -11,7 +11,7 @@ class Home extends React.Component {
     domotion(false)
     gsap.from(".body__wrapper--m", 1, {
       y: 100,
-      ease: "power4.out",
+      ease: "elastic.out(1, 0.3)",
       delay: 0.5,
       stagger: {
         amount: 1,
@@ -20,7 +20,7 @@ class Home extends React.Component {
       }
     })
     gsap.to(".body__wrapper--s", 1, {
-      scale: 0.1,
+      scale: 0.3,
       yoyo: true,
       repeat: -1,
       ease: "power4.out",

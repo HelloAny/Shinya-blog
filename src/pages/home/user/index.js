@@ -1,16 +1,19 @@
 import React from "react"
-import { Card } from "../../../components"
-import Profile from "../../../assets/profile.jpg"
+import { gsap } from "gsap"
 
 import "./index.scss"
 
 const User = ({ changeWrapper }) => {
+  React.useEffect(() => {
+    gsap.from(".user__container-name", { duration: 1, y: -100, opacity: 0 })
+    gsap.from(".user__container-summary", { duration: 1, y: -70, opacity: 0, delay: 0.5 })
+  }, [])
 
   return (
     <main className="user">
       <section className="user__container">
-        {/* <section className="user__container-name">{"AMIKARA."}</section>
-        <Card>
+        <section className="user__container-name">{"AMIKARA."}</section>
+        {/*<Card>
           <section className="user__container-profile">
 
             <section className="user__container-profile-circle">
@@ -21,7 +24,7 @@ const User = ({ changeWrapper }) => {
             <img src={Profile} alt="" />
           </section>
         </Card> */}
-        <section className="user__container-summary">{}</section>
+        <section className="user__container-summary">{"一只无人认领的猫"}</section>
         {/* <section className="user__container-link">
           <span className="user__container-link-item">
             <a href="https://twitter.com/AmiKara2" rel="noopener noreferrer" target="_blank">
