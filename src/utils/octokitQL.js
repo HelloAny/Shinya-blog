@@ -17,7 +17,6 @@ const fetchQL = async (params) => {
       repo: REPOS,
       ...payload
     });
-    console.log("reponsitory", repository)
     return dispatch(repository, action)
   } catch (error) {
     throw new Error("请求失败")
