@@ -81,15 +81,10 @@
       list-style-type: disc;
       font-size: 1.5rem;
       font-weight: 300;
-      margin: 0 0 0rem 4rem;
+      margin: 0 0 0rem 1rem;
       list-style: none;
       li{
-        padding: 0 0 2rem 0;
         line-height: 1.6em;
-        &::before{
-          content: "\0FCA  ";
-          color: $primary-color;
-        }
       }
     }
     del{
@@ -117,7 +112,8 @@
     }
   }
   &__tabbar{
-    width: 35%;
+    max-width: 30%;
+    min-width: 30%;
     display: flex;
     align-items: center;
     flex-direction: column;
