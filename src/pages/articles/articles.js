@@ -28,6 +28,8 @@ class Articles extends React.Component {
         domotion(false)
         this.setState({ loading: true })
       })
+    }).catch(e => {
+      console.error(e)
     })
   }
   onTransitionWillStart(data) {
