@@ -2,8 +2,9 @@ import { graphql } from "@octokit/graphql"
 import { REPO_AUTHOR, OWNER, REPOS } from "../constants/auth"
 import { ISSUES_LIST, ISSUES_INDEX, ISSUES_MORE } from "../constants/issues"
 import { STATUS_400 } from "../constants/status"
+import { createBrowserHistory } from 'history';
 import { releaseIssuesPinned } from "./util"
-
+const history = createBrowserHistory()
 const graphqlWithAuth = graphql.defaults({
   headers: {
     authorization: `token ${REPO_AUTHOR}`,
@@ -19,7 +20,8 @@ const fetchQL = async (params) => {
     });
     return dispatch(repository, action)
   } catch (error) {
-    throw new Error("请求失败")
+    history.push("/404")
+    history.go(0)
   }
 }
 
@@ -47,7 +49,8 @@ const dispatch = (response, action) => {
       }
     }
     default: {
-      throw new Error("初始化请求失败！")
+      history.push("/404")
+      history.go(0)
     }
   }
 }
