@@ -63,7 +63,7 @@ const Routes = (props) => {
     ))
   }
   return (
-    <LoadTransition loadNode={Load} delay={600}>
+    <LoadTransition loadNode={Load} delay={1000}>
       {
         routesList()
       }
