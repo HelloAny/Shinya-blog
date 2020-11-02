@@ -1,34 +1,17 @@
 import React from "react"
 import ReactMarkdown from 'react-markdown';
 import ArticleTabbar from "./tabbar/index"
-import javascript from 'highlight.js/lib/languages/javascript';
-import hljs from 'highlight.js/lib/core';
+import CodeBlock from "./highlight/index"
 import "./index.scss"
 
 class ArticleContent extends React.Component {
   constructor(props) {
     super(props)
     this.idPoint = 0
-    this.highlightNode = React.createRef()
-  }
-
-  componentDidMount() {
-    hljs.registerLanguage('javascript', javascript);
-    this.highlightNode.current && hljs.highlightBlock(this.highlightNode.current)
   }
 
   HeadingRenderer = (props) => {
     return React.createElement('h' + props.level, { id: this.idPoint++ }, props.children)
-  }
-
-  CodeRenderer = (props) => {
-    return (
-      <pre>
-        <code ref={this.highlightNode} className={`language-javascript`}>
-          {props.value}
-        </code>
-      </pre>
-    )
   }
   render() {
     const { content, children } = this.props
@@ -40,7 +23,7 @@ class ArticleContent extends React.Component {
         <section className="article-content__body" >
           <section className="article-content__body__text">
             {children}
-            <ReactMarkdown source={content} escapeHtml={false} renderers={{ heading: this.HeadingRenderer, code: this.CodeRenderer }} />
+            <ReactMarkdown source={content} escapeHtml={false} renderers={{ heading: this.HeadingRenderer, code: CodeBlock }} />
           </section>
         </section>
       </main>

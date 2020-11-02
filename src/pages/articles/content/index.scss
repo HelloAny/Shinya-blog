@@ -1,12 +1,11 @@
 @import "../../../style/system";
-@import '~highlight.js/styles/github.css';
 
 
 .article-content{
   display: flex;
   flex-direction: row;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   &__body {
     width: 65%;
     display: flex;
@@ -42,13 +41,14 @@
       border-left: 3px solid $primary-color;
     }
     code {
-      padding: .4rem;
-      padding-top: .1rem;
-      padding-bottom: .1rem;
-      background: $primary-color-light;
+      padding: .5rem;
+      padding-top: .3rem;
+      padding-bottom: .3rem;
+      color:$primary-color-text;
+      background: rgba(228, 228, 228, 0.705);
       border-radius: 5px;
-      font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-      font-size: 1.4rem;
+      font-family: Menlo, Monaco, "Courier New", monospace;
+      font-size: 1.2rem;
       vertical-align: middle;
       word-wrap: break-word;
     }
@@ -60,7 +60,6 @@
       color:$primary-color-text;
       font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
       font-size: .9em;
-      font-weight: normal;
       line-height: 1.3em;
       overflow: scroll;
       width: 95%;
@@ -72,17 +71,25 @@
         background: transparent;
         border-radius: 5px;
         font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-        font-size: 1.4rem;
+        font-size: 1rem;
         vertical-align: middle;
         word-wrap: break-word;
       }
     }
     ul{
       list-style-type: disc;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 300;
       margin: 0 0 0rem 1rem;
       list-style: none;
+      li{
+        line-height: 1.6em;
+      }
+    }
+    ol{
+      font-size: 1.4rem;
+      font-weight: 300;
+      margin: 0 0 0rem 1rem;
       li{
         line-height: 1.6em;
       }
