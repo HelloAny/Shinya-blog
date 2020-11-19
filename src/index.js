@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
+import configStore from './store'
 import './index.scss';
-
-// import AuthorInfo from "./shinya-config.js"
 import Root from './router/index'
+
+let store = configStore()
+
 ReactDOM.render(
-  <section className="mainBody">
+  <Provider store={store}>
     <Root />
-  </section>,
+  </Provider>,
   document.getElementById('root')
 );
 

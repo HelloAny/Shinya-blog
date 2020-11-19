@@ -1,16 +1,11 @@
 @import "../style/system";
 
-.root{
-  /*定义滚动条高宽及背景
- 高宽分别对应横竖滚动条的尺寸*/
- overflow-y: scroll;
-}
 
 .main_container{
   position: absolute;
-  top: $topbar-height;
   overflow-x: hidden;
-  height: calc(100vh - (80px + 10 * ((100vw - 320px)/ 1760)));
+  overflow-y: scroll;
+  height: 100%;
   width:100%;
 }
 
@@ -25,7 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 9999;
   pointer-events: none;
   overflow: hidden;
   background: transparent;
@@ -33,7 +28,7 @@
 
 .loading {
   opacity: 1;
-  z-index: 10;
+  z-index: 9999;
   position:fixed;
 }
 

@@ -18,7 +18,7 @@ import "./index.scss"
 const routes = [
   { path: '/', name: 'Home', Component: Home },
   { path: '/blog', name: 'Blog', Component: Post },
-  { path: `/article/:number`, name: 'Article', Component: Articles },
+  { path: `/article/:id`, name: 'Article', Component: Articles },
   { path: '*', name: "Error", Component: Error }
 ]
 
@@ -30,14 +30,11 @@ const Routes = (props) => {
     switch (path) {
       case `/blog`:
         return (<KeepAlive>
-          <main className="main_container" id="page">
-            <Component {...props} />
-          </main>
+          <Component {...props} />
         </KeepAlive>);
       default:
-        return <main className="main_container" id="page">
-          <Component {...props} />
-        </main>
+        return <Component {...props} />
+
     }
   }
   const routesList = () => {
@@ -64,24 +61,32 @@ const Routes = (props) => {
   }
   return (
     <LoadTransition loadNode={Load} delay={1000}>
-      {
-        routesList()
-      }
+      {routesList()}
     </LoadTransition >
   )
 }
 
-const Root = () => {
-  return (
-    <div className="root">
-      <Router >
+class Root extends React.Component {
+  componentDidMount() {
+    document.body.removeChild(document.getElementById('Loading'))
+  }
+
+  scroll = (e) => {
+    console.log(e.target)
+  }
+  render() {
+    return (
+      <Router>
         <AliveScope>
-          <Header></Header>
-          <Routes />
+          <main className="main_container" id="anchor">
+            <Header />
+            <Routes />
+          </main>
         </AliveScope>
       </Router>
-    </div>
-  );
+    );
+  }
 }
+
 
 export default Root

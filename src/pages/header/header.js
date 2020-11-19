@@ -1,54 +1,105 @@
 import React from "react"
+import gsap from "gsap"
 import { HCLink } from "../../components"
-
+import HeaderExtend from "./extend"
 import Button from "../../components/button/index"
 import Card from "../../components/card/index"
-import Logo from "../../assets/web/logo.png"
-import Name from "../../assets/web/name.png"
-// import Search from "../../assets/web/header/search.png"
-
+import { connect } from 'react-redux'
+import * as actions from '../../actions/header'
 import "./header.scss"
 
-const Header = () => {
+const headerList = [{ name: "首页", link: "/" }, { name: "博文", link: "/blog" }]
 
-  const headerList = [{ name: "首页", link: "/" }, { name: "博文", link: "/blog" }]
+@connect(state => state.header, actions)
+class Header extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      hidden: false,
+      extendState: false,
+      load: true
+    }
+  }
+  componentDidMount() {
+    const page = document.getElementById('anchor')
+    let lastScrollTop = 0;
+    page.addEventListener("scroll", (e) => {
+      // or window.addEventListener("scroll"....
+      var st = page.scrollTop;
+      if (st > lastScrollTop) {
+        this.props.dispatchTriggerHeader(true)
+        this.state.extendState && this.domainExtendState(this.state.extendState)
+      } else {
+        this.props.dispatchTriggerHeader(false)
+      }
+      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    }, false);
+  }
 
-  return (
-    <header className="headers">
-      <div className="headers__container" id="header">
-        <div className="headers__container-bar">
-          <div className="headers__container-bar-ln">
-            <HCLink to="/">
+  extend = () => {
+    this.domainExtendState(this.state.extendState)
+    this.setState({
+      load: false
+    })
+  }
+
+  domainExtendState = state => {
+    this.setState({
+      extendState: !state
+    }, () => {
+      const tl = gsap.timeline()
+      gsap.to('#headersBar', { y: !state ? 0 : -600, duration: 1.2, ease: "power3.out" })
+      tl.to('#rect1', { opacity: !state ? 0 : 1, x: !state ? -10 : 0, duration: 0.25 })
+        .to('#rect3', { opacity: !state ? 0 : 1, x: !state ? 10 : 0, duration: 0.25, })
+        .to('#rect2', { rotation: !state ? 45 : 0, duration: 0.25, transformOrigin: "50% 50%" })
+        .to('#rectx', { rotation: !state ? -45 : 0, duration: 0.25, transformOrigin: "50% 50%" })
+    })
+  }
+
+  render() {
+    return (
+      <header className="headers" style={{ transform: this.props.hidden ? "translate(-50%,-100%)" : "translate(-50%,0)" }}>
+        <section className="headers__container">
+          <section className="headers__container-bar">
+            <section className="headers__container-bar-ln">
               <Card>
-                <div><img src={Logo} alt="logo" className="headers__container-bar-ln-img headers__container-bar-ln-logo" /></div>
-                <div><img src={Name} alt="name" className="headers__container-bar-ln-img headers__container-bar-ln-name" /></div>
+                <section onClick={this.extend.bind(this)} className="headers__container-bar-ln-thum headers__container-bar-ln-ripple">
+                  <svg version="1.1" class="menu-toggle-image" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xmlSpace="preserve">
+                    <g>
+                      <rect id="rect1" x="1" y="1" width="22" height="3"></rect>
+                      <rect id="rect2" x="1" y="10" width="22" height="3"></rect>
+                      <rect id="rectx" x="1" y="10" width="22" height="3" ></rect>
+                      <rect id="rect3" x="1" y="19" width="22" height="3"></rect>
+                    </g>
+                  </svg>
+                </section>
               </Card>
-            </HCLink>
-          </div>
-          <div className="headers__container-bar-nav">
-            <div className="headers__container-bar-nav-list">
-              {
-                headerList && headerList.map((item, index) => (
-                  <span id="btn" key={index}>
-                    <HCLink to={item.link} activeStyle={{
-                      color: "#65beb4"
-                    }}>
-                      <Button className="headers__container-bar-nav-list-item" >{item.name}</Button>
-                    </HCLink>
-                  </span>
-                ))
-              }
-            </div>
-            {/* <Card>
-              <div className="headers__container-bar-nav-img">
-                <img src={Search} alt="search" className="headers__container-bar-nav-img-search" />
-              </div>
-            </Card> */}
-          </div>
-        </div>
-      </div>
-    </header>
-  )
+            </section>
+            <section className="headers__container-bar-nav">
+              <section className="headers__container-bar-nav-list">
+                {
+                  headerList && headerList.map((item, index) => (
+                    <span id="btn" key={index}>
+                      <HCLink to={item.link} activeStyle={{
+                        color: "#65beb4"
+                      }}>
+                        <Button className="headers__container-bar-nav-list-item" >{item.name}</Button>
+                      </HCLink>
+                    </span>
+                  ))
+                }
+              </section>
+            </section>
+          </section>
+          <section className="headers__container-extend" id="headersBar" isLoad={this.state.load}>
+            <HeaderExtend />
+          </section>
+        </section>
+
+      </header >
+    )
+  }
+
 }
 
 export default React.memo(Header)

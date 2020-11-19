@@ -1,6 +1,5 @@
 import React from "react"
 import gsap from "gsap"
-import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 import "./index.scss"
@@ -8,8 +7,6 @@ import "./index.scss"
 if (typeof window !== `undefined`) {
   gsap.registerPlugin(ScrollToPlugin);
 }
-const ROLL_SPEED = 700 //滚动速度
-
 class ArticleTabbar extends React.Component {
   constructor(props) {
     super(props)
@@ -21,53 +18,71 @@ class ArticleTabbar extends React.Component {
       return { level, text, hl }
     })
     this.state = {
-      navList: initNavList
+      navList: initNavList,
+      objItem: [],
+
     }
   }
   componentDidMount() {
-    /**！！！性能警告⚠️！！！*/
-    document.getElementById("page").addEventListener("scroll", this._navScroll())
+    this._getItemHeight()
+    document.getElementById("anchor").addEventListener("scroll", this._navScroll)
   }
 
   componentWillUnmount() {
-    document.getElementById("page").removeEventListener("scroll", this._navScroll())
+    document.getElementById("anchor").removeEventListener("scroll", this._navScroll)
   }
 
   _changeHash = (spot) => {
-    let finalDuration = Math.abs(document.getElementById(spot).getBoundingClientRect().top) / ROLL_SPEED
-    this._navHightlight(spot) //点击高亮
-    gsap.to(document.getElementById("page"), {
-      duration: finalDuration,
+    // document.getElementById("anchor").removeEventListener("scroll", this._navScroll)
+    this.state.objItem.forEach((k, v) => {
+      document.getElementById(`list-${k.id}`).classList.remove('acTabbar__main-text-hl')
+    });
+    document.getElementById(`list-${spot}`).classList.add('acTabbar__main-text-hl')
+    gsap.to(document.getElementById("anchor"), {
+      duration: 0,
       scrollTo: {
-        y: document.getElementById(spot),
-        offsetY: 20
-      }, ease: "power4.out"
+        y: this.state.objItem[spot].top,
+      }, onComplete: () => {
+        document.getElementById("anchor").addEventListener("scroll", this._navScroll)
+      }
     })
   }
-  //高亮代码
-  _navHightlight = rest => {
-    this.setState((state) => ({
-      navList: state.navList.map((item, index) => {
-        index === rest ? item.hl = true : item.hl = false
-        return item
+
+  //获取元素高度
+  _getItemHeight = () => {
+    const objItem = []
+    this.state.navList.forEach((item, index) => {
+      objItem.push({
+        id: index,
+        top: document.getElementById(index).getBoundingClientRect().top
       })
-    }))
+    })
+    this.setState({ objItem })
   }
-  //滚动高亮
-  _navScroll = (e) => {
-    var timeout = null
-    return () => {
-      if (timeout !== null)
-        clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        this.state.navList.forEach((item, index) => {
-          if (document.getElementById(index) && document.getElementById(index).getBoundingClientRect().top <= (50 + document.getElementById("header").getBoundingClientRect().height) && document.getElementById(index).getBoundingClientRect().top >= (-20 + document.getElementById("header").getBoundingClientRect().height)) {
-            this._navHightlight(index)
-            return
+
+  //高亮元素
+  domainHl = top => {
+    this.state.objItem.forEach((item, index) => {
+      if (document.getElementById(item.id) && item.top < top) {
+        document.getElementById(`list-${item.id}`).classList.add('acTabbar__main-text-hl');
+        this.state.objItem.forEach((k, v) => {
+          if (item.id !== k.id) {
+            document.getElementById(`list-${k.id}`).classList.remove('acTabbar__main-text-hl');
           }
         });
-      }, 100);
-    }
+      }
+    });
+  }
+
+  //滚动高亮
+  _navScroll = e => {
+    var timeout = null
+    if (timeout !== null)
+      clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      console.log(111)
+      this.domainHl(e.target.scrollTop)
+    }, 300);
   }
 
 
@@ -78,11 +93,11 @@ class ArticleTabbar extends React.Component {
           this.state.navList.map((item, index) => {
             let ns = ""
             for (let i = 1; i < item.level; i++) {
-              ns += "&nbsp;&nbsp;&nbsp;"
+              ns += ""
             }
             return (
               <section className="acTabbar__main" key={index} onClick={this._changeHash.bind(this, index)}>
-                <ReactMarkdown className={(item.hl ? "acTabbar__main-text-hl " : " ") + "acTabbar__main-text"} source={ns + item.text} />
+                <section id={`list-${index}`} className={"acTabbar__main-text"}>{ns + item.text}</section>
               </section>
             )
           })

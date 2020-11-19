@@ -1,35 +1,80 @@
 @import "../../style/system.scss";
 
+
 .headers{
-    width:100%;
+    width:85%;
     position: fixed;
     top: 0;
-    z-index: 999;
+    left:50%;
+    transition: all 0.6s;
+    background: white;
+    z-index: 20;
     &__container{
-        height: $topbar-height;
+        height: 100%;
         background: white;
-        border: none;
-        box-sizing: border-box;
         overflow: hidden;
         font-size: 2rem;
-        box-shadow: 0 5px 10px rgba(122, 122, 122, 0.274);
+        border: none;
+        box-shadow: 0 5px 10px rgba(173, 173, 173, 0.274);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-sizing: border-box;
         &-bar{
-            height: 100%;
+            height: 9vh;
             position: relative;
             display: flex;
             flex-direction: row;
-            align-items: center;
             justify-content: space-between;
+            z-index: 10;
+            background: white;
             &-ln{
+              display: flex;
+                flex-direction: row;
+                align-items: center;
                 margin-left: 3rem;
-                
+                &-ripple{
+                  position: relative;
+                  //隐藏溢出的径向渐变背景
+                  &:after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 5vh;
+                    height: 5vh;
+                    top: 0;
+                    left: 0;
+                    border-radius: 50%;
+                    z-index: -1;
+                    pointer-events: none;
+                    background-image: radial-gradient(circle, rgb(170, 169, 169) 90%, transparent 50%);
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                    opacity: 0;
+                    transition: all 0.3s;
+                  }
+                  &:hover:after{
+                    transform: scale(1.2);
+                    opacity: 0.3;
+                  }
+                }
+                &-thum{
+                  position: relative;
+                  margin: 0 auto;
+                  width: 5vh;
+                  height: 5vh;
+                  cursor: pointer;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  transform: scale(1.1);
+                }
                 &-img{
                     margin-left: 2rem;  
                                  
                   }
                 &-logo{
-                    height: 5rem;
-                    width: 5rem;
+                    height: 4rem;
+                    width: 4rem;
                 }
                 &-name{
                   width:11rem;
@@ -103,7 +148,24 @@
                 }
             }
         }
-        
+        &-extend{
+          z-index: 5;
+          overflow: hidden;
+          box-shadow: 0 5px 10px rgba(173, 173, 173, 0.274);
+          border-bottom-left-radius: 20px;
+          border-bottom-right-radius: 20px;
+          height: 600px;
+          transform: translateY(-600px);
+          position: absolute;
+          top:-100px;
+          width: 100%;
+          background: white;
+          overflow: hidden;
+        }
     }
 }
+
+
+
+
 

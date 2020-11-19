@@ -13,7 +13,8 @@
     height: 0.1rem;
     display: flex;
     border: none;
-    border-top: 0.5px solid $primary-color;
+    border-top: 2px solid $primary-color;
+    border-radius: 30px;
     margin: 50px 0 40px 0;
   }
   &__container{
@@ -26,7 +27,7 @@
     display: inline-block;
     font-size: 2.3rem;
     line-height: 5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     letter-spacing: 0.2rem;
     background-color: transparent;
     color:inherit;
@@ -58,12 +59,13 @@
     font-size: 1.5rem;
     font-weight: 300;
     line-height: 2.8rem;
+    letter-spacing: 1.5px;
     overflow : hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     @media screen and (max-width:600px ){
       font-size: 1.2rem;
     }
@@ -73,6 +75,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    margin-bottom: 2.5rem;
     &__time{
       font-size: 1.3rem;
       font-weight: 300;
@@ -88,9 +91,11 @@
       padding: 0.3rem;
       display: flex;
       align-items: center;
-      height: 2%;
+      justify-content: center;
+      height: 20px;
       border-radius: 3px;
       color: $primary-color-darkText;
+      background: gray;
       @media screen and (max-width:600px ){
         font-size: .7rem;
         margin-right: 0.7rem;
