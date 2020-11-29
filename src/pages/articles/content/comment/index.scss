@@ -1,0 +1,13 @@
+@import '../../../../style/system';
+
+.comment{
+  width:30%;
+  height: 50px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: $primary-color;
+  cursor: pointer;
+}
