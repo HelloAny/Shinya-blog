@@ -14,7 +14,7 @@ class Articles extends React.Component {
     super(props)
     this.state = {
       data: [],
-      loading: false,
+      loading: false
     }
   }
   componentDidMount() {
@@ -25,20 +25,21 @@ class Articles extends React.Component {
     })
   }
 
+
+
   render() {
     const { articleInfo } = this.props
     const { loading } = this.state
-    console.log(articleInfo)
+    const id = this.props.match ? this.props.match.params.id : 1
     return (
       <div className="article">
         {loading ? (
           <>
             <article className="article-container" >
-              <ArticleContent content={articleInfo.attributes.article}>
+              <ArticleContent id={id} content={articleInfo.attributes.article}>
                 <header className="article-container__header">{articleInfo.attributes.title}</header>
                 <time className="article-container__time">{GMTToStr(articleInfo.attributes.ct)}</time>
               </ArticleContent>
-
             </article>
             <section className="article-container-ICP">
               <Footer />

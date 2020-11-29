@@ -5,3 +5,4 @@ export { default as HCLink } from "./link/index"
 export { default as ICP } from "./ICP/ICP"
 export { default as Input } from "./input/index"
 export { default as Snack } from "./snack/index"
+export { default as Comment } from './valine/index'

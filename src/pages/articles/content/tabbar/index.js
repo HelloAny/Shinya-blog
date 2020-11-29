@@ -42,8 +42,6 @@ class ArticleTabbar extends React.Component {
       duration: 0,
       scrollTo: {
         y: this.state.objItem[spot].top,
-      }, onComplete: () => {
-        document.getElementById("anchor").addEventListener("scroll", this._navScroll)
       }
     })
   }
@@ -80,7 +78,6 @@ class ArticleTabbar extends React.Component {
     if (timeout !== null)
       clearTimeout(timeout);
     timeout = setTimeout(() => {
-      console.log(111)
       this.domainHl(e.target.scrollTop)
     }, 300);
   }

@@ -7,21 +7,22 @@
     height: 100%;
     position: relative;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
     &-main{
       position: relative;
       left:50%;
+      display: block;
       transform: translateX(-50%);
       height: 100%;
-      width: 70%;
-      min-width: 500px;
+      width: 60%;
       overflow-x: hidden;
       -ms-overflow-style: none;
       overflow: -moz-scrollbars-none;
       &::-webkit-scrollbar { width: 0 !important }
+      @media screen and (max-width:576px ){
+        width: 80%;
+      }      
       &-shinya, &-amikara{
-        width: 60%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;

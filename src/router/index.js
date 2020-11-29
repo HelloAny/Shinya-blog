@@ -5,8 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import { LoadTransition, LoadMotion, domotion } from "react-loading-transition"
-import KeepAlive from 'react-activation'
-import { AliveScope } from 'react-activation'
+import KeepAlive, { AliveScope } from 'react-activation'
 import Header from '../pages/header/header';
 import Home from "../pages/home/home"
 import Post from "../pages/post/post"
@@ -29,9 +28,13 @@ const Routes = (props) => {
   const componentSwitch = (path, Component, props) => {
     switch (path) {
       case `/blog`:
-        return (<KeepAlive>
-          <Component {...props} />
-        </KeepAlive>);
+        return (
+          <main id="blog">
+            <KeepAlive saveScrollPosition="#anchor">
+              <Component {...props} />
+            </KeepAlive>
+          </main>
+        );
       default:
         return <Component {...props} />
 
@@ -60,7 +63,7 @@ const Routes = (props) => {
     ))
   }
   return (
-    <LoadTransition loadNode={Load} delay={1000}>
+    <LoadTransition loadNode={Load}>
       {routesList()}
     </LoadTransition >
   )

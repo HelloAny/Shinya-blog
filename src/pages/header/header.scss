@@ -9,6 +9,9 @@
     transition: all 0.6s;
     background: white;
     z-index: 20;
+    @media screen and (max-width:576px ){
+      width: 100%;
+    }    
     &__container{
         height: 100%;
         background: white;
@@ -16,8 +19,6 @@
         font-size: 2rem;
         border: none;
         box-shadow: 0 5px 10px rgba(173, 173, 173, 0.274);
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
         box-sizing: border-box;
         &-bar{
             height: 9vh;
@@ -27,6 +28,7 @@
             justify-content: space-between;
             z-index: 10;
             background: white;
+
             &-ln{
               display: flex;
                 flex-direction: row;
@@ -67,15 +69,13 @@
                   justify-content: center;
                   align-items: center;
                   transform: scale(1.1);
+                  @media screen and (max-width:576px ){
+                    transform: scale(0.8);
+                  }
                 }
                 &-img{
-                    margin-left: 2rem;  
-                                 
+                    margin-left: 2rem;                
                   }
-                &-logo{
-                    height: 4rem;
-                    width: 4rem;
-                }
                 &-name{
                   width:11rem;
                   height:5rem;
@@ -100,7 +100,6 @@
                 flex-direction: row;
                 align-items: center;
                 margin-right: 6rem;
-              
                 &-list{
                     display: flex;
                     flex-direction: row;
@@ -152,8 +151,6 @@
           z-index: 5;
           overflow: hidden;
           box-shadow: 0 5px 10px rgba(173, 173, 173, 0.274);
-          border-bottom-left-radius: 20px;
-          border-bottom-right-radius: 20px;
           height: 600px;
           transform: translateY(-600px);
           position: absolute;

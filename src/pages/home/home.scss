@@ -10,22 +10,32 @@
       top: 10vh;
       bottom: 0;
       height: 90vh;
+      @media screen and (max-width:576px ){
+        top: 0;
+      }      
       &-main{
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        height: 100%;
+        @media screen and (min-width:577px ){
+          height: 100%;
+        }
+        @media screen and (max-width:576px ){
+          display: flex;
+          flex-direction: column-reverse;
+          justify-content: center;
+          align-items: center;
+        }
         &-user{
           flex: 1;
-          height:80%;
+          height:100%;
+          padding-top: 10%;
         }
         &-thum{
           flex: 1;
-          height: 80%;
+          height: 100%;
           width: 100%;
-          display: table-cell;
-          vertical-align: middle;
           img{
             max-width: 100%;
             max-height: 100%;

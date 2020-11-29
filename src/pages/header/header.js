@@ -49,10 +49,10 @@ class Header extends React.Component {
     }, () => {
       const tl = gsap.timeline()
       gsap.to('#headersBar', { y: !state ? 0 : -600, duration: 1.2, ease: "power3.out" })
-      tl.to('#rect1', { opacity: !state ? 0 : 1, x: !state ? -10 : 0, duration: 0.25 })
-        .to('#rect3', { opacity: !state ? 0 : 1, x: !state ? 10 : 0, duration: 0.25, })
-        .to('#rect2', { rotation: !state ? 45 : 0, duration: 0.25, transformOrigin: "50% 50%" })
-        .to('#rectx', { rotation: !state ? -45 : 0, duration: 0.25, transformOrigin: "50% 50%" })
+      tl.to('#rect1', { opacity: !state ? 0 : 1, x: !state ? -10 : 0, duration: 0.2 })
+        .to('#rect3', { opacity: !state ? 0 : 1, x: !state ? 10 : 0, duration: 0.2, })
+        .to('#rect2', { rotation: !state ? 45 : 0, duration: 0.2, transformOrigin: "50% 50%" })
+        .to('#rectx', { rotation: !state ? -45 : 0, duration: 0.2, transformOrigin: "50% 50%" })
     })
   }
 
@@ -64,7 +64,7 @@ class Header extends React.Component {
             <section className="headers__container-bar-ln">
               <Card>
                 <section onClick={this.extend.bind(this)} className="headers__container-bar-ln-thum headers__container-bar-ln-ripple">
-                  <svg version="1.1" class="menu-toggle-image" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xmlSpace="preserve">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enableBackground="new 0 0 24 24" xmlSpace="preserve">
                     <g>
                       <rect id="rect1" x="1" y="1" width="22" height="3"></rect>
                       <rect id="rect2" x="1" y="10" width="22" height="3"></rect>
@@ -81,7 +81,7 @@ class Header extends React.Component {
                   headerList && headerList.map((item, index) => (
                     <span id="btn" key={index}>
                       <HCLink to={item.link} activeStyle={{
-                        color: "#65beb4"
+                        color: "#65beb4",
                       }}>
                         <Button className="headers__container-bar-nav-list-item" >{item.name}</Button>
                       </HCLink>
@@ -91,7 +91,7 @@ class Header extends React.Component {
               </section>
             </section>
           </section>
-          <section className="headers__container-extend" id="headersBar" isLoad={this.state.load}>
+          <section className="headers__container-extend" id="headersBar">
             <HeaderExtend />
           </section>
         </section>

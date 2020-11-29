@@ -9,13 +9,13 @@
   margin: 50px 0 40px 0;
   hr{
     color:black;
-    width: 100%;
+    width: 5%;
     height: 0.1rem;
     display: flex;
     border: none;
-    border-top: 2px solid $primary-color;
+    border-top: 2px solid black;
     border-radius: 30px;
-    margin: 50px 0 40px 0;
+    margin: 40px 0 20px 0;
   }
   &__container{
     width: 80%;
@@ -25,9 +25,9 @@
   }
   &__title{
     display: inline-block;
-    font-size: 2.3rem;
+    font-size: 2.1rem;
     line-height: 5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     letter-spacing: 0.2rem;
     background-color: transparent;
     color:inherit;
@@ -35,7 +35,7 @@
     background-repeat: no-repeat;
     background-size: 0% 38%;
     background-position: 0 90%; 
-    transition: all 1s ease-in-out;
+    transition: all 0.8s ease-in-out;
     @media screen and (max-width:600px ){
       font-size: 1.6rem;
     }
@@ -56,10 +56,10 @@
     }
   }
   &__body {
-    font-size: 1.5rem;
-    font-weight: 300;
+    color: rgb(68, 68, 68);
+    font-size: 1.3rem;
     line-height: 2.8rem;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
     overflow : hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -104,10 +104,8 @@
     &__read{
       cursor: pointer;
       font-size: 1.3rem;
-      border: 1px solid $primary-color;
       color:$primary-color;
-      margin-left: 4rem;
-      padding: 0.7rem 1rem 0.7rem 1rem;
+      margin-top: 10px;
       @media screen and (max-width:600px ){
         font-size: 1rem;
         margin-left: 1.5rem;

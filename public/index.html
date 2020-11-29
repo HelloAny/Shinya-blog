@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -46,65 +47,54 @@
       -webkit-transform: translateY(-50%) translateX(-50%);
       transform: translateY(-50%) translateX(-50%);
       z-index: 100;
+
     }
 
-    @-webkit-keyframes ball-beat {
-      50% {
-        opacity: 0.2;
-        -webkit-transform: scale(0.75);
-        transform: scale(0.75);
-      }
-
-      100% {
-        opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-      }
-    }
-
-    @keyframes ball-beat {
-      50% {
-        opacity: 0.2;
-        -webkit-transform: scale(0.75);
-        transform: scale(0.75);
-      }
-
-      100% {
-        opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-      }
-    }
-
-    .ball-beat>div {
-      background-color: #279fcf;
-      width: 15px;
-      height: 15px;
-      border-radius: 100% !important;
-      margin: 2px;
-      -webkit-animation-fill-mode: both;
-      animation-fill-mode: both;
+    .lds-dual-ring {
       display: inline-block;
-      -webkit-animation: ball-beat 0.7s 0s infinite linear;
-      animation: ball-beat 0.7s 0s infinite linear;
+      width: 80px;
+      height: 80px;
     }
 
-    .ball-beat>div:nth-child(2n-1) {
-      -webkit-animation-delay: 0.35s !important;
-      animation-delay: 0.35s !important;
+    .lds-dual-ring:after {
+      content: " ";
+      display: block;
+      width: 64px;
+      height: 64px;
+      margin: 8px;
+      border-radius: 50%;
+      border: 6px solid #fed;
+      border-color: #fed transparent #fed transparent;
+      animation: lds-dual-ring 1.2s linear infinite;
+    }
+
+    @keyframes lds-dual-ring {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
   </style>
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1c09ee9544025cd0d57fc3428d7b3e09";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 </head>
 
 <body>
   <div id="Loading">
-    <div class="loader-inner ball-beat">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <div class="lds-dual-ring"></div>
   </div>
   <div id="root"></div>
 </body>
+
 
 </html>

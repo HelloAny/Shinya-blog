@@ -21,7 +21,7 @@ export default class Footer extends React.Component {
           <section className="footer__head-right">
             <span className="footer__head-right-title">NewsLetter</span>
             <span className="footer__head-right-subline">Subscribe to our newsletter and stay updated on the latest news and special offers!</span>
-            <form action="https://gmail.us2.list-manage.com/subscribe/post?u=4e3f428e65caa7656af55e264&amp;id=5d657c5df3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate className="footer__head-right-email">
+            <form action="https://gmail.us2.list-manage.com/subscribe/post?u=4e3f428e65caa7656af55e264&amp;id=5d657c5df3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" noValidate className="footer__head-right-email">
               <Input type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder={"email"} />
               <input className="footer__head-right-email-btn" type="submit" value="SUBSCRIBE" name="subscribe" id="mc-embedded-subscribe" />
             </form>

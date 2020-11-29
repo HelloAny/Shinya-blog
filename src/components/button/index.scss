@@ -11,7 +11,7 @@
   overflow: hidden;
   cursor:pointer;
   background: rgba(253, 253, 253, 0.15);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .button__item > span {
   position: relative;
@@ -25,12 +25,12 @@
   left: 0;
   transform: translateX(-100%);
   background: $primary-color;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .button__item:hover::before{
   transform: translateX(0);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .button__item:hover{
   color:white;

@@ -1,6 +1,6 @@
 import React from "react"
 import { HCLink } from "../../../components"
-import { GMTToStr } from "../../../utils/utils"
+// import { GMTToStr } from "../../../utils/utils"
 import "./index.scss"
 
 class PostItem extends React.Component {
@@ -20,14 +20,20 @@ class PostItem extends React.Component {
         {
           mixIssues ? (mixIssues.map((item, index) => (
             <section className="post-item__container" key={index}>
+
+              <hr />
               <section className="post-item__title">
                 <HCLink to={`/article/${item.id}`}>
                   {item.attributes.title}
                 </HCLink>
               </section>
               {item.attributes.pin ? <span className="post-item__top">置顶</span> : void 0}
+
+              <article className="post-item__body">
+                <div dangerouslySetInnerHTML={{ __html: item.attributes.thum }}></div>
+              </article>
               <section className="post-item__subline">
-                <time className="post-item__subline__time">
+                {/* <time className="post-item__subline__time">
                   {GMTToStr(item.attributes.ct)}
                 </time >
                 {
@@ -38,19 +44,14 @@ class PostItem extends React.Component {
                       </section>
                     )
                   })
-                }
+                } */}
 
-                {/* <HCLink to={`/article/${item.number}`}>
-                  <section className="post-item__subline__read" onClick={this.triggerFrame}>
+                <HCLink to={`/article/${item.id}`}>
+                  <section className="post-item__subline__read">
                     继续阅读
                     </section>
-                </HCLink> */}
+                </HCLink>
               </section>
-              <article className="post-item__body">
-                <div dangerouslySetInnerHTML={{ __html: item.attributes.thum }}></div>
-              </article>
-
-              { index !== mixIssues.length - 1 ? <hr /> : ""}
             </section>
           ))) : ""
         }
