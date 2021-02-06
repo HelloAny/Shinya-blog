@@ -24,7 +24,7 @@ const User = ({ jrsc }) => {
         <hr className="hr" />
         <section className="user__container-link">
           <section className="user__container-link-layoutOne">
-            © 2019-2020 Shinya Blog.
+            © 2019-2021 <a href="https://www.amikara.com"  rel="noopener noreferrer"> Shinya </a> Blog.
           </section>
           <section className="user__container-link-layoutTwo">
             <span className="user__container-link-item">
