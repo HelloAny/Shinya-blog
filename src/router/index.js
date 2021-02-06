@@ -10,6 +10,7 @@ import Header from '../pages/header/header';
 import Home from "../pages/home/home"
 import Post from "../pages/post/post"
 import Articles from "../pages/articles/articles"
+import Archive from "../pages/archive/archive"
 import Error from "../pages/404/404"
 import Load from "./load"
 import "./index.scss"
@@ -18,6 +19,7 @@ const routes = [
   { path: '/', name: 'Home', Component: Home },
   { path: '/blog', name: 'Blog', Component: Post },
   { path: `/article/:id`, name: 'Article', Component: Articles },
+  { path: '/archive', name: 'Archive', Component: Archive },
   { path: '*', name: "Error", Component: Error }
 ]
 

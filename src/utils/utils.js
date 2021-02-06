@@ -5,3 +5,9 @@ export const GMTToStr = (time) => {
     date.getDate()
   return Str
 }
+
+export const GMTToArr = (time) => {
+  let data = new Date(time)
+  let Str = [data.getFullYear(), data.getMonth() + 1, data.getDate()]
+  return Str
+}

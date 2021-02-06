@@ -1,0 +1,54 @@
+@import "../../../style/system.scss";
+
+.archive-list {
+  min-height: 30vh;
+  margin-top: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &-container {
+    width: 50%;
+    border-left: 1px $primary-color-light dashed;
+    padding-left: 30px;
+    margin-bottom: 30px;
+  }
+  &__item {
+    margin-bottom: 40px;
+    position: relative;
+    opacity: 1;
+    font-size: 18px;
+    &::before {
+      content: "";
+      position: absolute;
+      margin-top: 0.35em;
+      left: -38px;
+      width: 15px;
+      height: 15px;
+      border-radius: 0.8em;
+      background-color: $primary-color;
+    }
+    &__year{
+      color: $primary-color-text;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    &__month{
+      color: $primary-color-light-text;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    &__date{
+      color: $primary-color-light-text;
+      padding-right: 10px;
+      font-weight: 300;
+      font-size: 18px;
+    }
+    &__title{
+      font-size: 19px;
+      color: $primary-color-text;
+      font-weight: 600;
+    }
+  }
+}
