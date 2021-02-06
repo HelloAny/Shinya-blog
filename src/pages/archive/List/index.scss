@@ -8,17 +8,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 600px){
+    margin-top: 20px;
+  }
   &-container {
     width: 50%;
     border-left: 1px $primary-color-light dashed;
     padding-left: 30px;
     margin-bottom: 30px;
+    @media screen and (max-width: 600px){
+      width: 70%;
+    }
   }
   &__item {
     margin-bottom: 40px;
     position: relative;
     opacity: 1;
     font-size: 18px;
+    @media screen and (max-width: 600px){
+      margin-bottom: 30px;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -33,22 +42,35 @@
       color: $primary-color-text;
       font-size: 22px;
       font-weight: 600;
+      @media screen and (max-width: 600px){
+        font-size: 18px;
+      }
     }
     &__month{
       color: $primary-color-light-text;
       font-size: 20px;
       font-weight: 600;
+      @media screen and (max-width: 600px){
+        font-size: 16px;
+      }
     }
     &__date{
       color: $primary-color-light-text;
       padding-right: 10px;
       font-weight: 300;
       font-size: 18px;
+      @media screen and (max-width: 600px){
+        font-size: 16px;
+      }
     }
     &__title{
       font-size: 19px;
       color: $primary-color-text;
       font-weight: 600;
+      @media screen and (max-width: 600px){
+        font-size: 16px;
+        font-weight: 500;
+      }
     }
   }
 }
