@@ -12,7 +12,7 @@ class ArticleTabbar extends React.Component {
     super(props)
     let initNavList = props.source.match(/#+\s{1}([^\s]+)/g).map((item, index) => {
       let level = item.split(/\s/)[0].length
-      let text = item.split(/\s/)[1]
+      let text = item.match(/\s.*/)
 
       let hl = index === 0 ? true : false
       return { level, text, hl }
