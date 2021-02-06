@@ -1,66 +1,85 @@
 @import url("https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap");
-$primary-color:#65beb4;
-$primary-color-dark:#46a095;
+$primary-color: #65beb4;
+$primary-color-dark: #46a095;
 $primary-color-light: #65beb43b;
 $primary-color-text: #323232;
 $primary-color-light-text: #4e4e4e;
 $primary-color-darkText: #ffffff;
-$primary-color-subline:#9b9b9b;
-$topbar-height: calc(70px + 8 * ((100vw - 320px)/ 2000));
+$primary-color-subline: #9b9b9b;
+$topbar-height: calc(70px + 8 * ((100vw - 320px) / 2000));
 $primary-color-other: #eebf25;
-$primary-color-other-light:#eebf258e;
+$primary-color-other-light: #eebf258e;
 
-$body: #E1E9EF;
+$body: #e1e9ef;
 
-$abg1: #28D7CF;
-$abg2: #8CECD8;
-$a1: #55DED5;
-$a2: #00CFCF;
-$a3: #1C84A6;
-$a4: #40557C;
-$a5: #47466B;
+$abg1: #28d7cf;
+$abg2: #8cecd8;
+$a1: #55ded5;
+$a2: #00cfcf;
+$a3: #1c84a6;
+$a4: #40557c;
+$a5: #47466b;
 
-
-body,dl,dd,dt,p,h1,h2,h3,h4,h5,h6{margin:0; }
-ol,ul{margin:0;padding:0}  
-*, *::after, *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
-a{
-    box-shadow: none;
-    color: black;
-    text-decoration: none;
+ol,
+ul {
+  margin: 0;
+  padding: 0;
 }
-
-::-webkit-scrollbar
-{
-    position: absolute;
-    width:10px;
-    background-color:transparent;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-::-webkit-scrollbar-track
-{
-    border-radius:10px;
-    background-color:transparent;
-}
-::-webkit-scrollbar-thumb
-{
-    -webkit-box-shadow:inset 0 0 6px $primary-color;
-    background-color: $primary-color;
-    margin-top: 80px;
-}
-
-:root{
-    overflow: hidden;
-    font-size: 0.72rem;
-    font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+a {
+  box-shadow: none;
+  color: black;
+  text-decoration: none;
 }
 
-body{
-    font-family: Helvetica, sans-serif;
+::-webkit-scrollbar {
+  position: absolute;
+  width: 10px;
+  background-color: transparent;
 }
-div,h1,h2,h3{
-    font-family: Helvetica, sans-serif;
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px $primary-color;
+  background-color: $primary-color;
+  margin-top: 80px;
+}
+
+:root {
+  overflow: hidden;
+  font-size: 0.72rem;
+  font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande",
+    "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei",
+    "WenQuanYi Micro Hei", sans-serif;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+div,
+h1,
+h2,
+h3 {
+  font-family: Helvetica, sans-serif;
 }
