@@ -6,7 +6,7 @@ const ICP = (props) => {
   const { service = false } = props
   return (
     <footer className="ICP">
-      <section className="ICP-design">© 2019-2020 <span className="ICP-design-blog">Shinya Blog</span></section>
+      <section className="ICP-design">© 2019-2021 <span className="ICP-design-blog">Shinya Blog</span></section>
       <section className="ICP-design"> All rights reserved. Made with <span className="ICP-design-heart">❤</span>  by The <span className="ICP-design-user">AmiKara</span> Design</section>
       <section className="ICP-icp">备案|浙ICP备19035018号</section>
       {
