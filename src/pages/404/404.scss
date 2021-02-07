@@ -1,22 +1,22 @@
 @import "../../style/system";
 
-.nf{
+.nf {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  &-text{
-    font-family: 'Nanum Gothic';
+  &-text {
+    font-family: "Nanum Gothic";
     font-size: 40px;
     color: $primary-color;
   }
-  &-summary{
+  &-summary {
     font-size: 15px;
     margin-top: 30px;
     color: $primary-color-subline;
-    a{
+    a {
       color: $primary-color-other;
     }
   }

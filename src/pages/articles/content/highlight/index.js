@@ -4,16 +4,20 @@ import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 // 设置高亮样式
 import { xonokai } from "react-syntax-highlighter/dist/esm/styles/prism";
 // 设置高亮的语言
-import { jsx, javascript, scss } from "react-syntax-highlighter/dist/esm/languages/prism";
-import "./index.scss"
+import {
+  jsx,
+  javascript,
+  scss,
+} from "react-syntax-highlighter/dist/esm/languages/prism";
+import "./index.scss";
 class CodeBlock extends React.PureComponent {
   static propTypes = {
     value: PropTypes.string.isRequired,
-    language: PropTypes.string
+    language: PropTypes.string,
   };
 
   static defaultProps = {
-    language: null
+    language: null,
   };
 
   componentWillMount() {
@@ -28,7 +32,11 @@ class CodeBlock extends React.PureComponent {
     const { language, value } = this.props;
     return (
       <figure>
-        <SyntaxHighlighter language={language} style={xonokai} className="highlight">
+        <SyntaxHighlighter
+          language={language}
+          style={xonokai}
+          className="highlight"
+        >
           {value}
         </SyntaxHighlighter>
       </figure>

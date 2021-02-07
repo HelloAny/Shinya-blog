@@ -1,1 +1,1 @@
-export const JRSC = 'JRSC'
+export const JRSC = "JRSC";

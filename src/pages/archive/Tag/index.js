@@ -19,13 +19,17 @@ export default function Tag(props) {
   }, [tags]);
 
   const TagItem = () => {
-    return (
-      tags ? tags.map((item, index) => (
-        <section className="archive-tag__item" key={index} onClick={handleArchiveList.bind(this,item)}>
-          # {item}
-        </section>
-      )) : null
-    );
+    return tags
+      ? tags.map((item, index) => (
+          <section
+            className="archive-tag__item"
+            key={index}
+            onClick={handleArchiveList.bind(this, item)}
+          >
+            # {item}
+          </section>
+        ))
+      : null;
   };
 
   return (

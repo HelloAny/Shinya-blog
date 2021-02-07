@@ -1,20 +1,21 @@
 @import "../../style/system.scss";
 
-.ICP{
+.ICP {
   width: 100%;
   text-align: left;
   font-size: 1.1rem;
   text-align: center;
   color: rgb(190, 190, 190);
   letter-spacing: 0.8px;
-  @media screen and (max-width:600px ){
+  @media screen and (max-width: 600px) {
     font-size: 0.7rem;
   }
-  &-design{
-    &-heart{
+  &-design {
+    &-heart {
       color: #b35465;
     }
-    &-blog,&-user{
+    &-blog,
+    &-user {
       font-weight: 600;
     }
   }

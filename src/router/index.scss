@@ -1,13 +1,11 @@
 @import "../style/system";
 
-
-.main_container{
+.main_container {
   position: absolute;
   overflow-x: hidden;
   height: 100%;
-  width:100%;
+  width: 100%;
 }
-
 
 .initLoading {
   position: fixed;
@@ -28,12 +26,12 @@
 .loading {
   opacity: 1;
   z-index: 9999;
-  position:fixed;
+  position: fixed;
 }
 
 .loading::before {
   content: "";
-  position:fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 50%;
@@ -53,7 +51,7 @@
 
 .loading::after {
   content: "";
-  position:fixed;
+  position: fixed;
   top: 0;
   left: 50%;
   width: 50%;
@@ -73,7 +71,7 @@
 }
 
 .loading-done {
-  position:fixed;
+  position: fixed;
 }
 
 .loading-done::before {
@@ -224,4 +222,3 @@
 .HC-prev-exit {
   display: none;
 }
-

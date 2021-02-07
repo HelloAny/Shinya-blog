@@ -1,1 +1,1 @@
-export const HEADER_HIDDEN = "HEADER_HIDDEN"
+export const HEADER_HIDDEN = "HEADER_HIDDEN";

@@ -1,48 +1,46 @@
 @import "../../style/system.scss";
 
-
-.post{
+.post {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width:100%;
+  width: 100%;
   padding-top: 5vw;
   transition: all 0.5s;
-  &-clickMore{
+  &-clickMore {
     margin-top: 5rem;
     margin-bottom: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    &-curtain{
-      &-btn{
+    &-curtain {
+      &-btn {
         cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
-        background:$primary-color;
-        color:white;
-        height:4rem;
+        background: $primary-color;
+        color: white;
+        height: 4rem;
         width: 10rem;
         font-size: 1.3rem;
         border: 1px solid $primary-color;
       }
-      &-text{
-        color:$primary-color-subline;
+      &-text {
+        color: $primary-color-subline;
         font-weight: 500;
         font-size: 1.3rem;
       }
     }
   }
-  &-ICP{
+  &-ICP {
     position: relative;
     bottom: 0;
-    width:100%;
+    width: 100%;
   }
-  &-loading{
+  &-loading {
     position: relative;
     top: -20px;
   }
 }
-

@@ -1,6 +1,6 @@
 @import "../../style/system";
 
-.snack_inner{
+.snack_inner {
   min-width: 288px;
   background-color: $primary-color;
   color: #fff;
@@ -14,8 +14,9 @@
   line-height: 1.43;
   border-radius: 4px;
   letter-spacing: 0.01071em;
-  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12);
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
 }
-.snack_content{
+.snack_content {
   padding: 8px 0;
 }

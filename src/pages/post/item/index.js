@@ -1,7 +1,7 @@
-import React from "react"
-import { HCLink } from "../../../components"
+import React from "react";
+import { HCLink } from "../../../components";
 // import { GMTToStr } from "../../../utils/utils"
-import "./index.scss"
+import "./index.scss";
 
 class PostItem extends React.Component {
   constructor(...args) {
@@ -14,26 +14,31 @@ class PostItem extends React.Component {
   }
 
   render() {
-    const { item: mixIssues } = this.props
+    const { item: mixIssues } = this.props;
     return (
       <main className="post-item">
-        {
-          mixIssues ? (mixIssues.map((item, index) => (
-            <section className="post-item__container" key={index}>
+        {mixIssues
+          ? mixIssues.map((item, index) => (
+              <section className="post-item__container" key={index}>
+                <hr />
+                <section className="post-item__title">
+                  <HCLink to={`/article/${item.id}`}>
+                    {item.attributes.title}
+                  </HCLink>
+                </section>
+                {item.attributes.pin ? (
+                  <span className="post-item__top">置顶</span>
+                ) : (
+                  void 0
+                )}
 
-              <hr />
-              <section className="post-item__title">
-                <HCLink to={`/article/${item.id}`}>
-                  {item.attributes.title}
-                </HCLink>
-              </section>
-              {item.attributes.pin ? <span className="post-item__top">置顶</span> : void 0}
-
-              <article className="post-item__body">
-                <div dangerouslySetInnerHTML={{ __html: item.attributes.thum }}></div>
-              </article>
-              <section className="post-item__subline">
-                {/* <time className="post-item__subline__time">
+                <article className="post-item__body">
+                  <div
+                    dangerouslySetInnerHTML={{ __html: item.attributes.thum }}
+                  ></div>
+                </article>
+                <section className="post-item__subline">
+                  {/* <time className="post-item__subline__time">
                   {GMTToStr(item.attributes.ct)}
                 </time >
                 {
@@ -46,20 +51,18 @@ class PostItem extends React.Component {
                   })
                 } */}
 
-                <HCLink to={`/article/${item.id}`}>
-                  <section className="post-item__subline__read">
-                    继续阅读
+                  <HCLink to={`/article/${item.id}`}>
+                    <section className="post-item__subline__read">
+                      继续阅读
                     </section>
-                </HCLink>
+                  </HCLink>
+                </section>
               </section>
-            </section>
-          ))) : ""
-        }
-
-      </main >
-    )
+            ))
+          : ""}
+      </main>
+    );
   }
-
 }
 
-export default PostItem
+export default PostItem;

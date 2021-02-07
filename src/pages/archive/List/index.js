@@ -33,9 +33,7 @@ const ListItem = (props) => {
       <section className="archive-list__item">
         <span className="archive-list__item__date">{`${month} / ${date}  `}</span>
         <span className="archive-list__item__title">
-         <HCLink to={`/article/${item.id}`}>
-          {item.attributes.title}
-          </HCLink>
+          <HCLink to={`/article/${item.id}`}>{item.attributes.title}</HCLink>
         </span>
       </section>
     </>

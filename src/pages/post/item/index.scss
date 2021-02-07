@@ -1,14 +1,14 @@
 @import "../../../style/system.scss";
 
-.post-item{
+.post-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 75%;
   margin: 50px 0 40px 0;
-  hr{
-    color:black;
+  hr {
+    color: black;
     width: 5%;
     height: 0.1rem;
     display: flex;
@@ -17,41 +17,41 @@
     border-radius: 30px;
     margin: 40px 0 20px 0;
   }
-  &__container{
+  &__container {
     width: 80%;
-    @media screen and (max-width:600px ){
+    @media screen and (max-width: 600px) {
       width: 100%;
     }
   }
-  &__title{
+  &__title {
     display: inline-block;
     font-size: 2.1rem;
     line-height: 5rem;
     margin-bottom: 1rem;
     letter-spacing: 0.2rem;
     background-color: transparent;
-    color:inherit;
-    background-image: linear-gradient($primary-color,$primary-color);
+    color: inherit;
+    background-image: linear-gradient($primary-color, $primary-color);
     background-repeat: no-repeat;
     background-size: 0% 38%;
-    background-position: 0 90%; 
+    background-position: 0 90%;
     transition: all 0.8s ease-in-out;
-    @media screen and (max-width:600px ){
+    @media screen and (max-width: 600px) {
       font-size: 1.6rem;
     }
-    &:hover{
+    &:hover {
       background-size: 100% 38%;
     }
   }
-  &__top{
+  &__top {
     font-size: 1rem;
     margin-left: 2rem;
     color: white;
     border: 1px solid $primary-color;
-    background:$primary-color ;
+    background: $primary-color;
     padding: 0.3rem;
     border-radius: 6px;
-    @media screen and (max-width:600px ){
+    @media screen and (max-width: 600px) {
       font-size: 0.8rem;
     }
   }
@@ -60,32 +60,32 @@
     font-size: 1.3rem;
     line-height: 2.8rem;
     letter-spacing: 1.2px;
-    overflow : hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     margin-bottom: 1rem;
-    @media screen and (max-width:600px ){
+    @media screen and (max-width: 600px) {
       font-size: 1.2rem;
     }
   }
-  &__subline{
+  &__subline {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
     margin-bottom: 2.5rem;
-    &__time{
+    &__time {
       font-size: 1.3rem;
       font-weight: 300;
-      color:$primary-color-subline;
+      color: $primary-color-subline;
       margin-right: 2rem;
-      @media screen and (max-width:600px ){
+      @media screen and (max-width: 600px) {
         font-size: 1rem;
       }
     }
-    &__label{
+    &__label {
       font-size: 1rem;
       margin-right: 1rem;
       padding: 0.3rem;
@@ -96,17 +96,17 @@
       border-radius: 3px;
       color: $primary-color-darkText;
       background: gray;
-      @media screen and (max-width:600px ){
-        font-size: .7rem;
+      @media screen and (max-width: 600px) {
+        font-size: 0.7rem;
         margin-right: 0.7rem;
       }
     }
-    &__read{
+    &__read {
       cursor: pointer;
       font-size: 1.3rem;
-      color:$primary-color;
+      color: $primary-color;
       margin-top: 10px;
-      @media screen and (max-width:600px ){
+      @media screen and (max-width: 600px) {
         font-size: 1rem;
         margin-left: 1.5rem;
       }
@@ -114,13 +114,12 @@
   }
 }
 
-
-.fadeOut{
-  opacity:0;
+.fadeOut {
+  opacity: 0;
   transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
 }
-.fadeIn{
-  opacity:1;
+.fadeIn {
+  opacity: 1;
   transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
   transition-delay: 0.3s;
 }

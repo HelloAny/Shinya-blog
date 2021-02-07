@@ -1,7 +1,6 @@
 @import "../../../style/system";
 
-
-.article-content{
+.article-content {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -12,24 +11,28 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    @media screen and (max-width:900px ){
+    @media screen and (max-width: 900px) {
       width: 100%;
     }
-    &__text{
+    &__text {
       width: 90%;
     }
-    h1,h2,h3,h4,h5{
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
       margin: 2rem 0 1.8rem 0;
       padding: 10px 0px 5px 0px;
-      &::before{
+      &::before {
         content: "# ";
         color: $primary-color;
       }
     }
-    p{
+    p {
       line-height: 3rem;
       font-weight: 300;
-      white-space:pre-wrap;
+      white-space: pre-wrap;
       margin: 2rem 0 1.5rem 0;
     }
     blockquote {
@@ -41,10 +44,10 @@
       border-left: 3px solid $primary-color;
     }
     code {
-      padding: .5rem;
-      padding-top: .3rem;
-      padding-bottom: .3rem;
-      color:$primary-color-text;
+      padding: 0.5rem;
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+      color: $primary-color-text;
       background: rgba(228, 228, 228, 0.705);
       border-radius: 5px;
       font-family: Menlo, Monaco, "Courier New", monospace;
@@ -57,75 +60,79 @@
       padding: 1em 2.5%;
       background: $primary-color-light;
       border-radius: 0.4rem;
-      color:$primary-color-text;
-      font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-      font-size: .9em;
+      color: $primary-color-text;
+      font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+        DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+        serif;
+      font-size: 0.9em;
       line-height: 1.3em;
       overflow: scroll;
       width: 95%;
       overflow: auto;
       code {
-        padding: .4rem;
-        padding-top: .1rem;
-        padding-bottom: .1rem;
+        padding: 0.4rem;
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
         background: transparent;
         border-radius: 5px;
-        font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+        font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+          serif;
         font-size: 1rem;
         vertical-align: middle;
         word-wrap: break-word;
       }
     }
-    ul{
+    ul {
       position: relative;
       list-style-type: disc;
       font-size: 1.4rem;
       font-weight: 300;
       margin: 0 0 0rem 1rem;
       color: $primary-color-light-text;
-      li{
+      li {
         line-height: 2em;
       }
     }
-    ol{
+    ol {
       font-size: 1.4rem;
       font-weight: 300;
       margin: 0 0 0rem 1rem;
-      li{
+      li {
         line-height: 1.6em;
       }
     }
-    del{
-      color: $primary-color-subline
+    del {
+      color: $primary-color-subline;
     }
-    hr{
-      color:black;
-      width:100%;
+    hr {
+      color: black;
+      width: 100%;
       height: 0.1rem;
       border: none;
       border-top: 0.5px solid $primary-color;
       margin: auto;
     }
-    a{
+    a {
       color: $primary-color;
       text-decoration: none;
       transition: all 0.5s ease-in-out;
-      background-image: linear-gradient($primary-color,$primary-color);
+      background-image: linear-gradient($primary-color, $primary-color);
       background-repeat: no-repeat;
       background-size: 0% 3%;
-      background-position: 0 100%; 
-      &:hover{
+      background-position: 0 100%;
+      &:hover {
         background-size: 100% 3%;
       }
     }
   }
-  &__tabbar{
+  &__tabbar {
     max-width: 30%;
     min-width: 30%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    @media screen and (max-width:900px ){
+    @media screen and (max-width: 900px) {
       display: none;
     }
   }

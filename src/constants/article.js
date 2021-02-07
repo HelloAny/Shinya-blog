@@ -1,1 +1,1 @@
-export const ARTICLE_INDEX = 'ARTICLE_INDEX'
+export const ARTICLE_INDEX = "ARTICLE_INDEX";

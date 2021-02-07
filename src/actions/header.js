@@ -1,8 +1,6 @@
-import {
-  HEADER_HIDDEN
-} from "../constants/header"
+import { HEADER_HIDDEN } from "../constants/header";
 
-export const dispatchTriggerHeader = payload => ({
+export const dispatchTriggerHeader = (payload) => ({
   type: HEADER_HIDDEN,
-  payload
-})
+  payload,
+});

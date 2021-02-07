@@ -1,23 +1,22 @@
-  @import "../../style/system.scss";
+@import "../../style/system.scss";
 
-
-.button__item{      
-  position:relative;
+.button__item {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 600;
   font-size: 16px;
   overflow: hidden;
-  cursor:pointer;
+  cursor: pointer;
   background: rgba(253, 253, 253, 0.15);
   transition: all 0.3s ease-in-out;
 }
 .button__item > span {
   position: relative;
 }
-.button__item:before{
-  content:"";
+.button__item:before {
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -28,10 +27,10 @@
   transition: all 0.3s ease-in-out;
 }
 
-.button__item:hover::before{
+.button__item:hover::before {
   transform: translateX(0);
   transition: all 0.3s ease-in-out;
 }
-.button__item:hover{
-  color:white;
+.button__item:hover {
+  color: white;
 }

@@ -1,4 +1,3 @@
-import { load } from 'jinrishici'
+import { load } from "jinrishici";
 
-
-export { load as requestJRSC }
+export { load as requestJRSC };

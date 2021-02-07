@@ -1,8 +1,7 @@
-import React from "react"
-import './index.scss'
+import React from "react";
+import "./index.scss";
 
 class HeaderExtend extends React.Component {
-
   render() {
     return (
       <main className="extend">
@@ -30,8 +29,8 @@ class HeaderExtend extends React.Component {
           </section>
         </section>
       </main>
-    )
+    );
   }
 }
 
-export default HeaderExtend
+export default HeaderExtend;

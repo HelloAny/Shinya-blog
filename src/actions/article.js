@@ -1,16 +1,12 @@
-import {
-  ARTICLE_INDEX
-} from '../constants/article'
+import { ARTICLE_INDEX } from "../constants/article";
 
-import {
-  BLOG
-} from "../constants/api"
+import { BLOG } from "../constants/api";
 
-import createAction from '../utils/redux'
+import createAction from "../utils/redux";
 
-export const dispatchArticleIndex = payload =>
+export const dispatchArticleIndex = (payload) =>
   createAction({
     type: ARTICLE_INDEX,
     url: BLOG,
-    payload
-  })
+    payload,
+  });

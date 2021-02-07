@@ -1,6 +1,6 @@
-import React from "react"
-import { HCLink } from "../../../components"
-import "./index.scss"
+import React from "react";
+import { HCLink } from "../../../components";
+import "./index.scss";
 
 const Background = (props) => {
   return (
@@ -26,7 +26,7 @@ const Background = (props) => {
               </g>
             </g>
           </svg> */}
-        </section >
+        </section>
         {/* <section className="background__container-article">
           <HCLink to="/blog">
             <section className="background__container-article-item">
@@ -39,7 +39,7 @@ const Background = (props) => {
         </section> */}
       </section>
     </main>
-  )
-}
+  );
+};
 
-export default React.memo(Background)
+export default React.memo(Background);

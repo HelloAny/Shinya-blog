@@ -2,7 +2,7 @@ module.exports = {
   title: "Shinya",
   authorSite: {
     name: "AmiKara",
-    summary: "热爱之所爱"
+    summary: "热爱之所爱",
   },
   description: "V0.01",
   background: ``,
@@ -12,5 +12,5 @@ module.exports = {
     twitter: "https://twitter.com/AmiKara2",
     ins: "https://www.instagram.com/amikara_/",
     email: "mailto:1914420862@qq.com",
-  }
-}
+  },
+};

@@ -1,103 +1,126 @@
 @import "../../style/system";
-.input{
-  font-family: 'Nanum Gothic';
-  &__group{ 
-    position:relative;
+.input {
+  font-family: "Nanum Gothic";
+  &__group {
+    position: relative;
   }
-  input 				{
-    font-size:18px;
-    padding:10px 10px 10px 5px;
-    display:block;
-    width:300px;
-    border:none;
-    color:rgb(87, 87, 87);
+  input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    color: rgb(87, 87, 87);
     box-sizing: border-box;
-    @media screen and (max-width:600px ){
-      width:200px;
+    @media screen and (max-width: 600px) {
+      width: 200px;
     }
   }
-  input:focus 		{ outline:none; }
-  
-  /* LABEL ======================================= */
-  label 				 {
-    color:#999; 
-    font-size:18px;
-    font-weight:normal;
-    position:absolute;
-    pointer-events:none;
-    left:5px;
-    top:10px;
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
-    -webkit-transition:0.2s ease all;
+  input:focus {
+    outline: none;
   }
-  
+
+  /* LABEL ======================================= */
+  label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+
   /* active state */
-  input:focus ~ label, input:valid ~ label 		{
-    top:-20px;
-    font-size:14px;
+  input:focus ~ label,
+  input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
     color: $primary-color;
   }
-  
+
   /* BOTTOM BARS ================================= */
-  &__bar 	{ position:relative; display:block; width:300px;  
-    @media screen and (max-width:600px ){
-    width:200px
-  }}
-  &__bar:before, &__bar:after 	{
-    content:'';
-    height:2px; 
-    width:0;
-    bottom:0; 
+  &__bar {
+    position: relative;
+    display: block;
+    width: 300px;
+    @media screen and (max-width: 600px) {
+      width: 200px;
+    }
+  }
+  &__bar:before,
+  &__bar:after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 0;
     box-sizing: border-box;
-    position:absolute;
-    background:$primary-color; 
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
-    -webkit-transition:0.2s ease all;
+    position: absolute;
+    background: $primary-color;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
   }
   &__bar:before {
-    left:50%;
+    left: 50%;
   }
   &__bar:after {
-    right:50%; 
+    right: 50%;
   }
-  
+
   /* active state */
-  input:focus ~ &__bar:before, input:focus ~ &__bar:after {
-    width:50%;
+  input:focus ~ &__bar:before,
+  input:focus ~ &__bar:after {
+    width: 50%;
   }
-  
+
   /* HIGHLIGHTER ================================== */
   &__highlight {
-    position:absolute;
-    height:60%; 
-    width:100px; 
-    top:25%; 
-    left:0;
-    pointer-events:none;
-    opacity:0.5;
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
   }
-  
+
   /* active state */
   input:focus ~ &__highlight {
-    -webkit-animation:inputHighlighter 0.3s ease;
-    -moz-animation:inputHighlighter 0.3s ease;
-    animation:inputHighlighter 0.3s ease;
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
   }
-  
+
   /* ANIMATIONS ================ */
   @-webkit-keyframes inputHighlighter {
-    from { background:$primary-color; }
-    to 	{ width:0; background:transparent; }
+    from {
+      background: $primary-color;
+    }
+    to {
+      width: 0;
+      background: transparent;
+    }
   }
   @-moz-keyframes inputHighlighter {
-    from { background:$primary-color; }
-    to 	{ width:0; background:transparent; }
+    from {
+      background: $primary-color;
+    }
+    to {
+      width: 0;
+      background: transparent;
+    }
   }
   @keyframes inputHighlighter {
-    from { background:$primary-color; }
-    to 	{ width:0; background:transparent; }
+    from {
+      background: $primary-color;
+    }
+    to {
+      width: 0;
+      background: transparent;
+    }
   }
 }
-

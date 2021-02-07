@@ -1,33 +1,27 @@
-import {
-  POST_LIST,
-  POST_NUMBER,
-  POST_RELOAD
-} from "../constants/post"
+import { POST_LIST, POST_NUMBER, POST_RELOAD } from "../constants/post";
 
-import {
-  BLOG
-} from "../constants/api"
+import { BLOG } from "../constants/api";
 
-import createAction from '../utils/redux'
+import createAction from "../utils/redux";
 
-export const dispatchPostList = payload =>
+export const dispatchPostList = (payload) =>
   createAction({
     type: POST_LIST,
     url: BLOG,
-    payload
-  })
+    payload,
+  });
 
-export const dispatchPostQuantity = payload =>
+export const dispatchPostQuantity = (payload) =>
   createAction({
     type: POST_NUMBER,
     url: BLOG,
-    method: 'count',
-    payload
-  })
+    method: "count",
+    payload,
+  });
 
-export const dispatchPostReload = payload =>
+export const dispatchPostReload = (payload) =>
   createAction({
     type: POST_RELOAD,
     url: BLOG,
-    payload
-  })
+    payload,
+  });
