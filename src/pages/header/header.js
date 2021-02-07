@@ -11,7 +11,7 @@ import "./header.scss";
 const headerList = [
   { name: "首页", link: "/" },
   { name: "博文", link: "/blog" },
-  { name: "归档", link: '/archive'}
+  { name: "归档", link: "/archive" },
 ];
 
 @connect((state) => state.header, actions)
@@ -26,18 +26,18 @@ class Header extends React.Component {
   }
   componentDidMount() {
     const page = document.getElementById("anchor");
+    const { dispatchTriggerHeader } = this.props;
     let lastScrollTop = 0;
     page.addEventListener(
       "scroll",
       (e) => {
-        // or window.addEventListener("scroll"....
         var st = page.scrollTop;
         if (st > lastScrollTop) {
-          this.props.dispatchTriggerHeader(true);
+          dispatchTriggerHeader(true);
           this.state.extendState &&
             this.domainExtendState(this.state.extendState);
         } else {
-          this.props.dispatchTriggerHeader(false);
+          dispatchTriggerHeader(false);
         }
         lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
       },
@@ -89,13 +89,12 @@ class Header extends React.Component {
   };
 
   render() {
+    const { hidden } = this.props;
     return (
       <header
         className="headers"
         style={{
-          transform: this.props.hidden
-            ? "translate(-50%,-100%)"
-            : "translate(-50%,0)",
+          transform: hidden ? "translate(-50%,-100%)" : "translate(-50%,0)",
         }}
       >
         <section className="headers__container">
