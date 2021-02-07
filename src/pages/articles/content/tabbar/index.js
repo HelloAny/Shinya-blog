@@ -41,7 +41,7 @@ class ArticleTabbar extends React.Component {
     gsap.to(document.getElementById("anchor"), {
       duration: 0,
       scrollTo: {
-        y: this.state.objItem[spot].top,
+        y: this.state.objItem[spot].top - 60,
       }
     })
   }
@@ -61,7 +61,7 @@ class ArticleTabbar extends React.Component {
   //高亮元素
   domainHl = top => {
     this.state.objItem.forEach((item, index) => {
-      if (document.getElementById(item.id) && item.top < top) {
+      if (document.getElementById(item.id) && item.top < top + 120) {
         document.getElementById(`list-${item.id}`).classList.add('acTabbar__main-text-hl');
         this.state.objItem.forEach((k, v) => {
           if (item.id !== k.id) {
