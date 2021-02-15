@@ -30,7 +30,7 @@ export default function post(state = INITIAL_STATE, action) {
       return {
         ...state,
         more: m,
-        pageIndex: state.pageIndex++,
+        pageIndex: ++state.pageIndex,
         postList: state.postList.concat(action.payload),
       };
     }
