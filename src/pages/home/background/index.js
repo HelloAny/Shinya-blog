@@ -1,5 +1,4 @@
 import React from "react";
-import { HCLink } from "../../../components";
 import "./index.scss";
 
 const Background = (props) => {
