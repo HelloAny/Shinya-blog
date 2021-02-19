@@ -6,7 +6,7 @@
   width: 100%;
   font-size: 1.4rem;
   &__body {
-    width: 70%;
+    width: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,8 +31,9 @@
     }
     p {
       line-height: 3rem;
-      font-weight: 300;
+      font-weight: 400;
       white-space: pre-wrap;
+      color: $primary-color-text;
       margin: 2rem 0 1.5rem 0;
     }
     blockquote {
@@ -42,6 +43,13 @@
       font-size: 1.4rem;
       color: #858585;
       border-left: 3px solid $primary-color;
+      p {
+        line-height: 3rem;
+        font-weight: 400;
+        white-space: pre-wrap;
+        color: #858585;
+        margin: 2rem 0 1.5rem 0;
+      }
     }
     code {
       padding: 0.5rem;
@@ -127,8 +135,8 @@
     }
   }
   &__tabbar {
-    max-width: 30%;
-    min-width: 30%;
+    max-width: 25%;
+    min-width: 25%;
     display: flex;
     align-items: center;
     flex-direction: column;
