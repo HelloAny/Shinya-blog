@@ -98,9 +98,9 @@ class ArticleTabbar extends React.Component {
     return (
       <nav className="acTabbar">
         {this.state.navList.map((item, index) => {
-          let ns = "";
+          let ns = 0;
           for (let i = 1; i < item.level; i++) {
-            ns += "";
+            ns += 10;
           }
           return (
             <section
@@ -108,8 +108,8 @@ class ArticleTabbar extends React.Component {
               key={index}
               onClick={this._changeHash.bind(this, index)}
             >
-              <section id={`list-${index}`} className={"acTabbar__main-text"}>
-                {ns + item.text}
+              <section id={`list-${index}`} style={{paddingLeft: ns}} className={"acTabbar__main-text"}>
+                {item.text}
               </section>
             </section>
           );
