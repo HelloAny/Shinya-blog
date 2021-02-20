@@ -21,7 +21,7 @@ class ArticleContent extends React.Component {
 
   ImgRenderer = (props) => {
     if (props.alt) {
-      var scale = props.alt.match(/(?<=\s-[wW]).*/);
+      var scale = props.alt.toLowerCase().split(" -w").pop();
     }
     return React.createElement("img", {
       src: props.src,
